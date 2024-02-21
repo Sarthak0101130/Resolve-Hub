@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".user_home_page_activity">
+
+    <RelativeLayout android:id="@+id/content_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints">
+
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/page_user_home_page_ek1"
+            android:layout_marginTop="0dp"
+            android:layout_marginStart="0dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            >
+
+
+            <View
+                android:id="@+id/_bg__user_home_page_ek2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/_bg__user_home_page_ek2_shape"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:layout_editor_absoluteY="120dp" />
+
+            <View
+                android:id="@+id/user_home_page_society_guidelines_box"
+                android:layout_width="320dp"
+                android:layout_height="52dp"
+                android:layout_marginBottom="28dp"
+                android:alpha="0.69999998807907"
+                android:background="@drawable/user_home_page_society_guidelines_box_shape"
+                app:layout_constraintBottom_toTopOf="@+id/user_home_page_view_complaints_box"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.494"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/user_home_page_ads"
+                app:layout_constraintVertical_bias="1.0" />
+
+            <View
+                android:id="@+id/user_home_page_view_complaints_box"
+                android:layout_width="320dp"
+                android:layout_height="52dp"
+                android:layout_marginBottom="32dp"
+                android:background="@drawable/user_home_page_view_complaints_box_shape"
+                app:layout_constraintBottom_toTopOf="@+id/user_home_page_important_helpline_numbers"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.494"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/user_home_page_ads"
+                app:layout_constraintVertical_bias="1.0" />
+
+            <View
+                android:id="@+id/user_home_page_important_helpline_numbers_box"
+                android:layout_width="320dp"
+                android:layout_height="52dp"
+                android:layout_marginBottom="44dp"
+                android:alpha="0.96470588445663"
+                android:background="@drawable/user_home_page_important_helpline_numbers_box_shape"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.494"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/user_home_page_ads"
+                app:layout_constraintVertical_bias="0.965" />
+
+            <TextView
+                android:id="@+id/user_home_page_view_complaints"
+                android:layout_width="214.4dp"
+                android:layout_height="35.4dp"
+                android:text="@string/user_home_page_view_complaints_string"
+                android:textColor="@color/user_home_page_view_complaints_color"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/user_home_page_society_guidelines_box"
+                app:layout_constraintEnd_toEndOf="@+id/user_home_page_society_guidelines_box"
+                app:layout_constraintHorizontal_bias="0.497"
+                app:layout_constraintStart_toStartOf="@+id/user_home_page_society_guidelines_box"
+                app:layout_constraintTop_toTopOf="@+id/user_home_page_society_guidelines_box" />
+
+
+            <View
+                android:id="@+id/user_home_page_register_complaint_box"
+                android:layout_width="320dp"
+                android:layout_height="52dp"
+                android:layout_marginBottom="24dp"
+                android:background="@drawable/user_home_page_register_complaint_box_shape"
+                app:layout_constraintBottom_toTopOf="@+id/user_home_page_society_guidelines_box"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.494"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/user_home_page_ads"
+                app:layout_constraintVertical_bias="1.0" />
+
+            <TextView
+                android:id="@+id/user_home_page_society_guidelines"
+                android:layout_width="233.4dp"
+                android:layout_height="36.4dp"
+                android:text="@string/user_home_page_society_guidelines_string"
+                android:textColor="@color/user_home_page_view_complaints_color"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/user_home_page_view_complaints_box"
+                app:layout_constraintEnd_toEndOf="@+id/user_home_page_view_complaints_box"
+                app:layout_constraintStart_toStartOf="@+id/user_home_page_view_complaints_box"
+                app:layout_constraintTop_toTopOf="@+id/user_home_page_view_complaints_box" />
+
+            <TextView
+                android:id="@+id/user_home_page_register_complaint"
+                android:layout_width="238.4dp"
+                android:layout_height="42.4dp"
+                android:text="@string/user_home_page_register_complaint_string"
+                android:textColor="@color/user_home_page_view_complaints_color"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/user_home_page_register_complaint_box"
+                app:layout_constraintEnd_toEndOf="@+id/user_home_page_register_complaint_box"
+                app:layout_constraintStart_toStartOf="@+id/user_home_page_register_complaint_box"
+                app:layout_constraintTop_toTopOf="@+id/user_home_page_register_complaint_box" />
+
+            <TextView
+                android:id="@+id/user_home_page_important_helpline_numbers"
+                android:layout_width="290dp"
+                android:layout_height="35dp"
+                android:text="@string/user_home_page_important_helpline_numbers_string"
+                android:textColor="@color/user_home_page_view_complaints_color"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/user_home_page_important_helpline_numbers_box"
+                app:layout_constraintEnd_toEndOf="@+id/user_home_page_important_helpline_numbers_box"
+                app:layout_constraintStart_toStartOf="@+id/user_home_page_important_helpline_numbers_box"
+                app:layout_constraintTop_toTopOf="@+id/user_home_page_important_helpline_numbers_box" />
+
+            <ImageView
+                android:id="@+id/user_home_page_ads"
+                android:layout_width="320dp"
+                android:layout_height="170dp"
+                android:layout_marginBottom="356dp"
+                android:contentDescription="user_home_page_ads"
+                android:src="@drawable/user_home_page_ads"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.494"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/user_home_page_welcome" />
+
+            <TextView
+                android:id="@+id/user_home_page_welcome"
+                android:layout_width="276.4dp"
+                android:layout_height="40.4dp"
+                android:layout_marginTop="76dp"
+                android:text="@string/user_home_page_welcome_string"
+                android:textColor="@color/user_home_page_view_complaints_color"
+                android:textSize="24sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/_bg__user_home_page_ek2" />
+
+            <ImageView
+                android:id="@+id/user_home_page_dashboard"
+                android:layout_width="57dp"
+                android:layout_height="44dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="16dp"
+                android:contentDescription="user_home_page_dashboard"
+                android:src="@drawable/user_home_page_dashboard"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/user_homr_page_company_name"
+                android:layout_width="156dp"
+                android:layout_height="31dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/user_homr_page_company_name_string"
+                android:textColor="@color/user_home_page_view_complaints_color"
+                android:textSize="12sp"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:layout_editor_absoluteX="86dp" />
+
+            <ImageView
+                android:id="@+id/user_home_page_company_icon"
+                android:layout_width="49dp"
+                android:layout_height="44dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:contentDescription="user_home_page_company_icon"
+                android:src="@drawable/user_home_page_company_icon"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/user_home_page_notification"
+                android:layout_width="47dp"
+                android:layout_height="48dp"
+                android:contentDescription="user_home_page_notification"
+                android:src="@drawable/user_home_page_notification"
+                tools:layout_editor_absoluteX="286dp"
+                tools:layout_editor_absoluteY="18dp" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

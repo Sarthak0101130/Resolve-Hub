@@ -1,0 +1,11 @@
+<!-- res/drawable/button_border.xml -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Solid background color (if needed) -->
+    <solid android:color="@color/yellow" />
+    <!-- Border color and width -->
+    <stroke
+        android:color="@color/black"
+    android:width="2dp" />
+    <!-- Corners radius (optional) -->
+    <corners android:radius="8dp" />
+</shape>

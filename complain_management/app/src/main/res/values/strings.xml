@@ -1,0 +1,77 @@
+<resources>
+    <string name="app_name">LoginAndSignUp</string>
+    <string name="enter_your_name">Enter your Name</string>
+    <string name="enter_apartment_name">Enter Apartment Name</string>
+    <string name="enter_phone_number">Enter Phone Number</string>
+    <string name="title_activity_services">services</string>
+    <string name="select">Select Service</string>
+    <string name="select_service">Select Service</string>
+    <string name="title_activity_home_page">home_page</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="sign_in_and_move_to_homepage">SIGN IN AND MOVE TO HOMEPAGE</string>
+    <string name="ek_img_content">ExportKit Image</string>
+    <string name="billing_and_more_string">Billing  and More</string>
+    <string name="complaint_history_string">Complaint History</string>
+    <string name="edit_staff_string">Edit Staff</string>
+    <string name="edit_organization_string">Edit Organization</string>
+    <string name="edit_user_string">Edit User</string>
+    <string name="edit_service_string">Edit Service</string>
+    <string name="welcome_admin____string">WELCOME ADMIN !!</string>
+    <string name="company_name_string">COMPANY NAME </string>
+    <string name="vector_ek1">vector_ek1</string>
+    <string name="image_2">image_2</string>
+    <string name="stroke_1">stroke_1</string>
+    <string name="vector_ek2">vector_ek2</string>
+    <string name="vector_ek3">vector_ek3</string>
+    <string name="vector_ek4">vector_ek4</string>
+    <string name="vector_ek5">vector_ek5</string>
+    <string name="vector_ek10">vector_ek10</string>
+    <string name="vector_ek8">vector_ek8</string>
+    <string name="vector_ek6">vector_ek6</string>
+    <string name="vector_ek9">vector_ek9</string>
+    <string name="vector_ek12">vector_ek12</string>
+    <string name="vector_ek11">vector_ek11</string>
+    <string name="vector">vector</string>
+    <string name="vector_ek7">vector_ek7</string>
+    <string name="edit_user_ek3_string">Edit User</string>
+    <string name="add_user_string">ADD USER</string>
+    <string name="existing_user_string">EXISTING USER</string>
+
+
+    <string name="edit_staff_ek3_string">Edit Staff</string>
+    <string name="add_staff_string">ADD STAFF</string>
+    <string name="existing_staff_string">EXISTING STAFF</string>
+
+    <string name="edit_services_ek3_string">Edit Services</string>
+    <string name="add_service_string">ADD SERVICE</string>
+    <string name="existing_service_string">EXISTING SERVICE</string>
+
+
+    <string name="add_user_text_string">ADD USER</string>
+    <string name="enter_e_mail_id_string">Enter E-mail Id</string>
+    <string name="select_address_proof_string">Select Address Proof</string>
+    <string name="enter_address_proof_string">Enter Address Proof</string>
+    <string name="enter_age_string">Enter Age</string>
+    <string name="enter_name_string">Enter Name</string>
+    <string name="enter_building_no__string">Enter Building No.</string>
+    <string name="enter_building_name_string">Enter Building Name</string>
+    <string name="enter_flat_no__string">Enter Flat No.</string>
+    <string name="enter_mobile_number_string">Enter Mobile Number</string>
+    <string name="new_user_string">NEW USER</string>
+    <string name="submit_string">SUBMIT</string>
+
+    <string name="main_get_started_text_string">GET STARTED</string>
+
+    <string name="user_home_page_view_complaints_string">View Complaints</string>
+    <string name="user_home_page_society_guidelines_string">Society Guidelines</string>
+    <string name="user_home_page_register_complaint_string">Register Complaint</string>
+    <string name="user_home_page_important_helpline_numbers_string">Important Helpline Numbers</string>
+    <string name="user_home_page_welcome_string">WELCOME USERNAME</string>
+    <string name="user_homr_page_company_name_string">COMPANY NAME </string>
+    <string name="title_activity_user_home_page" />
+    <string name="new_user">New User</string>
+
+
+</resources>

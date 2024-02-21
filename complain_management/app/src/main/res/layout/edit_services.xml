@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".edit_services_activity">
+
+    <RelativeLayout
+        android:id="@+id/content_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/page_edit_services_ek1"
+            android:layout_marginTop="0dp"
+            android:layout_marginStart="0dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <View
+                android:id="@+id/_bg__edit_services_ek2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/_bg__edit_services_ek2_shape"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="1.0" />
+
+            <ImageButton
+                android:id="@+id/edit_services_back_icon"
+                android:layout_width="58dp"
+                android:layout_height="59dp"
+                android:background="@color/white"
+                android:contentDescription="edit_services_back_icon"
+                android:src="@drawable/edit_services_back_icon"
+                app:layout_constraintBottom_toBottomOf="@+id/_bg__edit_services_ek2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.011"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.011" />
+
+            <TextView
+                android:id="@+id/edit_services_ek3"
+                android:layout_width="288dp"
+                android:layout_height="73dp"
+                android:text="@string/edit_services_ek3_string"
+                android:textColor="@color/edit_services_ek3_color"
+                android:textSize="48sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/edit_services_main"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.447"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/_bg__edit_services_ek2"
+                app:layout_constraintVertical_bias="0.719" />
+
+            <ImageButton
+                android:id="@+id/edit_services_add_services_box"
+                android:layout_width="289dp"
+                android:layout_height="77dp"
+                android:contentDescription="Description of the button"
+                android:background="@drawable/edit_services_add_services_box_shape"
+                app:layout_constraintBottom_toTopOf="@+id/edit_services_existing_service_box"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.434"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edit_services_main"
+                app:layout_constraintVertical_bias="0.614" />
+
+            <TextView
+                android:id="@+id/add_service"
+                android:layout_width="166dp"
+                android:layout_height="42dp"
+                android:text="@string/add_service_string"
+                android:textColor="@color/edit_services_ek3_color"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/edit_services_add_services_box"
+                app:layout_constraintEnd_toStartOf="@+id/edit_services_add_services_vector"
+                app:layout_constraintStart_toStartOf="@+id/edit_services_add_services_box"
+                app:layout_constraintTop_toTopOf="@+id/edit_services_add_services_box"
+                app:layout_constraintVertical_bias="0.655" />
+
+            <ImageButton
+                android:id="@+id/edit_services_existing_service_box"
+                android:layout_width="293dp"
+                android:layout_height="81dp"
+                android:contentDescription="Description of the button"
+                android:background="@drawable/edit_services_existing_service_box_shape"
+                app:layout_constraintBottom_toBottomOf="@+id/_bg__edit_services_ek2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.42"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edit_services_main"
+                app:layout_constraintVertical_bias="0.517" />
+
+            <TextView
+                android:id="@+id/existing_service"
+                android:layout_width="219dp"
+                android:layout_height="38dp"
+                android:text="@string/existing_service_string"
+                android:textColor="@color/edit_services_ek3_color"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/edit_services_existing_service_box"
+                app:layout_constraintEnd_toStartOf="@+id/edit_services_existing_services_vector"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/edit_services_existing_service_box"
+                app:layout_constraintTop_toTopOf="@+id/edit_services_existing_service_box"
+                app:layout_constraintVertical_bias="0.511" />
+
+            <ImageView
+                android:id="@+id/edit_services_main"
+                android:layout_width="224dp"
+                android:layout_height="189dp"
+                android:contentDescription="edit_services_main"
+                android:src="@drawable/edit_services_main"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.497"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.284" />
+
+            <ImageView
+                android:id="@+id/edit_services_add_services_vector"
+                android:layout_width="38dp"
+                android:layout_height="39dp"
+                android:contentDescription="edit_services_add_services_vector"
+                android:src="@drawable/edit_services_add_services_vector"
+                app:layout_constraintBottom_toBottomOf="@+id/edit_services_add_services_box"
+                app:layout_constraintEnd_toEndOf="@+id/edit_services_add_services_box"
+                app:layout_constraintHorizontal_bias="0.87"
+                app:layout_constraintStart_toStartOf="@+id/edit_services_add_services_box"
+                app:layout_constraintTop_toTopOf="@+id/edit_services_add_services_box"
+                app:layout_constraintVertical_bias="0.593" />
+
+            <ImageView
+                android:id="@+id/edit_services_existing_services_vector"
+                android:layout_width="33dp"
+                android:layout_height="35dp"
+                android:contentDescription="edit_services_existing_services_vector"
+                android:src="@drawable/edit_services_existing_services_vector"
+                app:layout_constraintBottom_toBottomOf="@+id/edit_services_existing_service_box"
+                app:layout_constraintEnd_toEndOf="@+id/edit_services_existing_service_box"
+                app:layout_constraintHorizontal_bias="0.917"
+                app:layout_constraintStart_toStartOf="@+id/edit_services_existing_service_box"
+                app:layout_constraintTop_toTopOf="@+id/edit_services_existing_service_box"
+                app:layout_constraintVertical_bias="0.523" />
+
+            <ImageButton
+                android:id="@+id/vector"
+                android:layout_width="50dp"
+                android:layout_height="59dp"
+                android:background="@color/white"
+                android:contentDescription="@string/vector"
+                android:src="@drawable/vector"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.628"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.988" />
+
+
+            <ImageButton
+                android:id="@+id/vector_ek1"
+                android:layout_width="52dp"
+                android:layout_height="55dp"
+                android:background="@color/white"
+                android:contentDescription="@string/vector_ek1"
+                android:src="@drawable/vector_ek1"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.083"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.983" />
+
+            <ImageButton
+                android:id="@+id/vector_ek2"
+                android:layout_width="56dp"
+                android:layout_height="63dp"
+                android:background="@color/white"
+                android:contentDescription="@string/vector_ek2"
+                android:src="@drawable/vector_ek2"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.954"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.993" />
+
+            <ImageButton
+                android:id="@+id/stroke_1"
+                android:layout_width="55dp"
+                android:layout_height="58dp"
+                android:background="@color/white"
+                android:contentDescription="@string/stroke_1"
+                android:src="@drawable/stroke_1"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.351"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.986" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

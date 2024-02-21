@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".edit_staff_activity">
+
+
+    <RelativeLayout android:id="@+id/content_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints">
+
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/page_edit_staff_ek1"
+            android:layout_marginTop="0dp"
+            android:layout_marginStart="0dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <View
+                android:id="@+id/_bg__edit_staff_ek2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/_bg__edit_staff_ek2_shape"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="1.0" />
+
+            <ImageButton
+                android:id="@+id/edit_staff_back_icon"
+                android:layout_width="50dp"
+                android:layout_height="53dp"
+                android:contentDescription="edit_staff_back_icon"
+                android:src="@drawable/edit_user_back_icon"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.043"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.026" />
+
+            <TextView
+                android:id="@+id/edit_staff_ek3"
+                android:layout_width="215dp"
+                android:layout_height="73dp"
+                android:text="@string/edit_staff_ek3_string"
+                android:textColor="@color/edit_staff_ek3_color"
+                android:textSize="48sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/edit_staff_main"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.519" />
+
+
+            <ImageButton
+                android:id="@+id/edit_staff_add_staff_box"
+                android:layout_width="268dp"
+                android:layout_height="70dp"
+                android:contentDescription="Description of the button"
+                android:background="@drawable/edit_staff_add_staff_box_shape"
+                app:layout_constraintBottom_toBottomOf="@+id/_bg__edit_staff_ek2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.496"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edit_staff_exisiting_staff_box"
+                app:layout_constraintVertical_bias="0.206" />
+
+            <ImageView
+                android:id="@+id/edit_staff_existing_staff_vector"
+                android:layout_width="54dp"
+                android:layout_height="39dp"
+                android:contentDescription="edit_staff_existing_staff_vector"
+                android:src="@drawable/edit_staff_existing_staff_vector"
+                app:layout_constraintBottom_toBottomOf="@+id/edit_staff_add_staff_box"
+                app:layout_constraintEnd_toEndOf="@+id/edit_staff_add_staff_box"
+                app:layout_constraintHorizontal_bias="0.052"
+                app:layout_constraintStart_toEndOf="@+id/existing_staff"
+                app:layout_constraintTop_toTopOf="@+id/edit_staff_add_staff_box"
+                app:layout_constraintVertical_bias="0.612" />
+
+            <ImageButton
+                android:id="@+id/edit_staff_exisiting_staff_box"
+                android:layout_width="268dp"
+                android:layout_height="70dp"
+                android:contentDescription="Description of the button"
+                android:background="@drawable/edit_staff_exisiting_staff_box_shape"
+                app:layout_constraintBottom_toBottomOf="@+id/_bg__edit_staff_ek2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.496"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/_bg__edit_staff_ek2"
+                app:layout_constraintVertical_bias="0.636" />
+
+            <TextView
+                android:id="@+id/add_staff"
+                android:layout_width="152dp"
+                android:layout_height="36dp"
+                android:text="@string/add_staff_string"
+                android:textColor="@color/edit_staff_ek3_color"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/edit_staff_exisiting_staff_box"
+                app:layout_constraintEnd_toEndOf="@+id/edit_staff_exisiting_staff_box"
+                app:layout_constraintHorizontal_bias="0.198"
+                app:layout_constraintStart_toStartOf="@+id/edit_staff_exisiting_staff_box"
+                app:layout_constraintTop_toTopOf="@+id/edit_staff_exisiting_staff_box"
+                app:layout_constraintVertical_bias="0.47" />
+
+            <TextView
+                android:id="@+id/existing_staff"
+                android:layout_width="184dp"
+                android:layout_height="32dp"
+                android:text="@string/existing_staff_string"
+                android:textColor="@color/edit_staff_ek3_color"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/edit_staff_add_staff_box"
+                app:layout_constraintEnd_toEndOf="@+id/edit_staff_add_staff_box"
+                app:layout_constraintHorizontal_bias="0.13"
+                app:layout_constraintStart_toStartOf="@+id/edit_staff_add_staff_box"
+                app:layout_constraintTop_toTopOf="@+id/edit_staff_add_staff_box" />
+
+            <ImageView
+                android:id="@+id/edit_staff_main"
+                android:layout_width="254dp"
+                android:layout_height="226dp"
+                android:layout_marginTop="108dp"
+                android:contentDescription="edit_staff_main"
+                android:src="@drawable/edit_staff_main"
+                app:layout_constraintBottom_toTopOf="@+id/edit_staff_exisiting_staff_box"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.483"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/_bg__edit_staff_ek2"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <ImageView
+                android:id="@+id/edit_staff_add_staff_vector"
+                android:layout_width="57dp"
+                android:layout_height="45dp"
+                android:contentDescription="edit_staff_add_staff_vector"
+                android:src="@drawable/edit_staff_add_staff_vector"
+                app:layout_constraintBottom_toBottomOf="@+id/edit_staff_exisiting_staff_box"
+                app:layout_constraintEnd_toEndOf="@+id/edit_staff_exisiting_staff_box"
+                app:layout_constraintStart_toEndOf="@+id/add_staff"
+                app:layout_constraintTop_toTopOf="@+id/edit_staff_exisiting_staff_box"
+                app:layout_constraintVertical_bias="0.644" />
+
+            <ImageButton
+                android:id="@+id/vector"
+                android:layout_width="50dp"
+                android:layout_height="59dp"
+                android:background="@color/white"
+                android:contentDescription="@string/vector"
+                android:src="@drawable/vector"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.628"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.988" />
+
+
+            <ImageButton
+                android:id="@+id/vector_ek1"
+                android:layout_width="52dp"
+                android:layout_height="55dp"
+                android:background="@color/white"
+                android:contentDescription="@string/vector_ek1"
+                android:src="@drawable/vector_ek1"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.083"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.983" />
+
+            <ImageButton
+                android:id="@+id/vector_ek2"
+                android:layout_width="56dp"
+                android:layout_height="65dp"
+                android:background="@color/white"
+                android:contentDescription="@string/vector_ek2"
+                android:src="@drawable/vector_ek2"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.932"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.994" />
+
+            <ImageButton
+                android:id="@+id/stroke_1"
+                android:layout_width="55dp"
+                android:layout_height="58dp"
+                android:background="@color/white"
+                android:contentDescription="@string/stroke_1"
+                android:src="@drawable/stroke_1"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.351"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.986" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
