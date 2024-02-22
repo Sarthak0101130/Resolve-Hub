@@ -73,5 +73,10 @@
     <string name="title_activity_user_home_page" />
     <string name="new_user">New User</string>
 
+    <string name="enter_mobile_number">Enter Mobile NUmber</string>
+    <string name="we_will_send_you_a_one_time_otp_to_the_given_mobile_number">We will send you a one time OTP to the given mobile number</string>
+    <string name="otp_verification">OTP VERIFICATION</string>
+    <string name="title_activity_dashboard">dashboard</string>
+
 
 </resources>

@@ -10,7 +10,6 @@
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
 
     <color name="_bg__home_page_ek2_color">#FFFFFF</color>
     <color name="_bg__bottom_bar_ek1_color">#000000</color>
@@ -53,5 +52,15 @@
     <color name="user_home_page_view_complaints_color">#000000</color>
     <color name="user_home_page_register_complaint_box_color">#A3E1F1</color>
     <color name="user_home_page_society_guidelines_box_color">#F6F7C4</color>
+
+    <color name="colortextfirst">#000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="colortextsecond">#777474</color>
+    <color name="colorPrimary1">#FFC107</color>
+    <color name="colorPrimaryDark1">#FFC107</color>
+    <color name="colorAccent1">#FF5722</color>
+    <color name="colorview">#A5A2A2</color>
+
+    <color name="first">#DCED87</color>
 
 </resources>
