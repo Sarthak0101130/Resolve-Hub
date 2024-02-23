@@ -12,8 +12,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Complain_management"
         tools:targetApi="31">
+        <!--        <activity-->
+        <!--            android:name=".EnterMobileNumber"-->
+        <!--            android:exported="false" />-->
         <activity
-            android:name=".EnterMobileNumber"
+            android:name=".OtpVerification"
             android:exported="false" />
         <activity
             android:name=".botton_constant"
@@ -43,9 +46,9 @@
         <activity
             android:name=".services"
             android:exported="false" />
-        <activity
-            android:name=".SignUpActivity"
-            android:exported="false" />
+        <!--        <activity-->
+        <!--            android:name=".SignUpActivity"-->
+        <!--            android:exported="false" />-->
         <activity
             android:name=".SignInActivity"
             android:exported="false" />

@@ -8,7 +8,11 @@ import android.widget.Toast
 import com.example.complain_management.databinding.ActivityAdminBinding
 import com.example.complain_management.databinding.ActivitySignUpBinding
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.GenericTypeIndicator
+import com.google.firebase.database.ValueEventListener
 
 class Admin : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
@@ -66,14 +70,29 @@ class Admin : AppCompatActivity() {
             }else{
                 auth.createUserWithEmailAndPassword(email,Password).addOnCompleteListener{
                     if(it.isSuccessful){
-                        val databaseRef=database.reference.child("admin").child(auth.currentUser!!.uid)
-                        val admin:admindata=admindata(email = email, name = name, number = number, organizationname = organizationname, uid = auth.currentUser!!.uid,type="admin")
-
-                        databaseRef.setValue(admin).addOnCompleteListener {
+                        Toast.makeText(this,"Id build", Toast.LENGTH_SHORT).show()
+                        val adminData = AdminData(
+                            email = email,
+                            name = name,
+                            number = number,
+                            organizationname = organizationname,
+                        )
+                        val verification=Verification(
+                            type = "Admin",
+                        )
+                        val typeRef=database.reference.child("Verification").child(auth.currentUser!!.uid)
+                        val databaseRef=database.reference.child("Admin").child(auth.currentUser!!.uid)
+                        databaseRef.setValue(adminData).addOnCompleteListener {
                             if(it.isSuccessful){
-                                val intent= Intent(this,services::class.java)
-                                intent.putExtra("userId", auth.currentUser!!.uid)
-                                startActivity(intent)
+                                typeRef.setValue(verification).addOnCompleteListener {
+                                    if(it.isSuccessful){
+                                        val intent= Intent(this,home_page_activity::class.java)
+                                        intent.putExtra("userId", auth.currentUser!!.uid)
+                                        startActivity(intent)
+                                    }else{
+                                        Toast.makeText(this,"Admin not registered",Toast.LENGTH_SHORT).show()
+                                    }
+                                }
                             }else{
                                 binding.adminconfirmPass.error=it.exception.toString()
                                 Toast.makeText(this,it.exception.toString(), Toast.LENGTH_SHORT).show()
