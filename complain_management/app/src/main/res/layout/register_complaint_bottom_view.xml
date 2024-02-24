@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".home_page_activity">
+
+    <ImageButton
+        android:id="@+id/vector_ek1"
+        android:layout_width="52dp"
+        android:layout_height="55dp"
+        android:background="@color/white"
+        android:contentDescription="@string/vector_ek1"
+        android:src="@drawable/vector_ek1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.075"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <ImageButton
+        android:id="@+id/stroke_1"
+        android:layout_width="55dp"
+        android:layout_height="58dp"
+        android:background="@color/white"
+        android:contentDescription="@string/stroke_1"
+        android:src="@drawable/stroke_1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.351"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.998" />
+
+    <ImageButton
+        android:id="@+id/vector"
+        android:layout_width="50dp"
+        android:layout_height="59dp"
+        android:background="@color/white"
+        android:contentDescription="@string/vector"
+        android:src="@drawable/vector"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.628"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <ImageButton
+        android:id="@+id/vector_ek2"
+        android:layout_width="54dp"
+        android:layout_height="56dp"
+        android:background="@color/white"
+        android:contentDescription="@string/vector_ek2"
+        android:src="@drawable/vector_ek2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.929"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

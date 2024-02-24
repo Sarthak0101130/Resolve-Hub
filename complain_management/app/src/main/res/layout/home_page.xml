@@ -348,8 +348,8 @@
 
             <TextView
                 android:id="@+id/welcome_admin___"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="242dp"
+                android:layout_height="37dp"
                 android:fontFamily="serif"
                 android:gravity="center"
                 android:text="@string/welcome_admin____string"

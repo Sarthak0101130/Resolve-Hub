@@ -12,9 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Complain_management"
         tools:targetApi="31">
-        <!--        <activity-->
-        <!--            android:name=".EnterMobileNumber"-->
-        <!--            android:exported="false" />-->
+        <activity
+            android:name=".Register_Complaint"
+            android:exported="false" />
+        <!-- <activity -->
+        <!-- android:name=".EnterMobileNumber" -->
+        <!-- android:exported="false" /> -->
         <activity
             android:name=".OtpVerification"
             android:exported="false" />
@@ -45,10 +48,9 @@
             android:label="@string/title_activity_user_home_page" />
         <activity
             android:name=".services"
-            android:exported="false" />
-        <!--        <activity-->
-        <!--            android:name=".SignUpActivity"-->
-        <!--            android:exported="false" />-->
+            android:exported="false" /> <!-- <activity -->
+        <!-- android:name=".SignUpActivity" -->
+        <!-- android:exported="false" /> -->
         <activity
             android:name=".SignInActivity"
             android:exported="false" />
