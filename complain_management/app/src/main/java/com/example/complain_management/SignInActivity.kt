@@ -104,6 +104,7 @@ class SignInActivity : AppCompatActivity() {
                                                                         )
                                                                         intent.putExtra("userId",userId)
                                                                         intent.putExtra("Token",p0)
+                                                                        intent.putExtra("Phone","+91"+verificationData.phone)
                                                                         startActivity(intent)
                                                                         finish()
                                                                     }
