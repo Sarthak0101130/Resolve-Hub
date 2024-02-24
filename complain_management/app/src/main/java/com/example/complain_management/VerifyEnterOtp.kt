@@ -1,4 +1,4 @@
-//import android.app.AppComponentFactory
+package com.example.complain_management//import android.app.AppComponentFactory
 //import android.os.Bundle
 //import androidx.appcompat.app.AppCompatActivity
 //import com.example.complain_management.R
@@ -111,6 +111,7 @@
 //            }
 //        }
 //        numberotpmove()
+
 //        val resendlabel = findViewById<TextView>(R.id.textresendotp)
 //        resendlabel.setOnClickListener {
 //            PhoneAuthProvider.getInstance().verifyPhoneNumber(
@@ -188,7 +189,6 @@
 //                    inputnumber6!!.requestFocus()
 //                }
 //            }
-//
 //            override fun afterTextChanged(s: Editable) {}
 //        })
 //    }
