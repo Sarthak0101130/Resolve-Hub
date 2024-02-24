@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/admin"
-    tools:context=".SignUpActivity">
+    tools:context=".Admin">
 
 
     <TextView
@@ -41,7 +41,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/enter_your_name"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"
+            android:textColor="@color/black"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -61,7 +62,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Enter Organisation name"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"
+            android:textColor="@color/black"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -82,7 +84,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/enter_phone_number"
-            android:inputType="phone" />
+            android:inputType="phone"
+            android:textColor="@color/black"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -103,7 +106,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Type your Email"
-            android:inputType="textEmailAddress" />
+            android:inputType="textEmailAddress"
+            android:textColor="@color/black"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -125,7 +129,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Type Your Password"
-            android:inputType="textPassword" />
+            android:inputType="textPassword"
+            android:textColor="@color/black"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -147,7 +152,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Retype Your Password"
-            android:inputType="textPassword" />
+            android:inputType="textPassword"
+            android:textColor="@color/black"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <ImageButton

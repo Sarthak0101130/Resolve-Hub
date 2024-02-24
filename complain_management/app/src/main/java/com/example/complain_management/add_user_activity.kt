@@ -10,14 +10,19 @@ import com.google.firebase.FirebaseException
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.PhoneAuthCredential
 import com.google.firebase.auth.PhoneAuthProvider
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.GenericTypeIndicator
 import com.google.firebase.database.ServerValue
+import com.google.firebase.database.ValueEventListener
 import java.util.concurrent.TimeUnit
 
 class add_user_activity : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
-    private lateinit var binding:AddUserBinding
-    private lateinit var database:FirebaseDatabase
+    private lateinit var binding: AddUserBinding
+    private lateinit var database: FirebaseDatabase
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = AddUserBinding.inflate(layoutInflater)
@@ -56,81 +61,91 @@ class add_user_activity : AppCompatActivity() {
                     Toast.makeText(this, "Building Name Required", Toast.LENGTH_SHORT).show()
                 }
             } else {
-                if (number.isNotEmpty() && number.length == 10) {
-                    generateOTP("+91$number",name, age, email, flat_no, building_no, building_name,userId.toString())
-                    val intent=Intent(this,add_user_activity::class.java)
-                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
-                    intent.putExtra("userId", userId)
-                    startActivity(intent)
-                    finish()
-                } else {
-                    Toast.makeText(this, "Invalid Phone Number", Toast.LENGTH_SHORT).show()
+                auth.createUserWithEmailAndPassword(email, email).addOnCompleteListener {
+                    if (it.isSuccessful) {
+                        if (number.isNotEmpty() && number.length == 10) {
+                            val userData = UserData(
+                                name = name,
+                                age = age,
+                                email = email,
+                                flatNo = flat_no,
+                                buildingNo = building_no,
+                                buildingName = building_name,
+                                adminId = userId,
+                                number = number,
+                            )
+
+                            val verificationData = Verification(
+                                type = "User",
+                                verified = "No",
+                                phone = number
+                            )
+                            val userRef =
+                                database.reference.child("UserData").child(auth.currentUser!!.uid)
+                            userRef.setValue(userData)
+
+                            val verificationRef = database.reference.child("Verification")
+                                .child(auth.currentUser!!.uid)
+                            verificationRef.setValue(verificationData)
+                            val adminRef = database.getReference("Admin").child(userId!!)
+                            // Retrieve existing user list and add the current user's UID
+                            adminRef.addListenerForSingleValueEvent(object : ValueEventListener {
+                                override fun onDataChange(snapshot: DataSnapshot) {
+                                    val updatedUsers: MutableList<String> = mutableListOf()
+                                    // Add existing users from admin data (if available)
+                                    if (snapshot.exists() && snapshot.child("uid").exists()) {
+                                        val existingUsers =
+                                            snapshot.child("uid").children.map { it.getValue(String::class.java)!! }
+                                        updatedUsers.addAll(existingUsers)
+                                    }
+                                    // Add the current user's UID
+                                    updatedUsers.add(auth.currentUser!!.uid)
+                                    adminRef.child("uid").setValue(updatedUsers)
+                                        .addOnSuccessListener {
+                                            Toast.makeText(
+                                                this@add_user_activity,
+                                                "User data saved successfully",
+                                                Toast.LENGTH_SHORT
+                                            ).show()
+                                        }
+                                        .addOnFailureListener { exception ->
+                                            Toast.makeText(
+                                                this@add_user_activity,
+                                                "Failed to save user data: ${exception.message}",
+                                                Toast.LENGTH_SHORT
+                                            ).show()
+                                        }
+
+                                }
+                                override fun onCancelled(databaseError: DatabaseError) {
+                                    // Handle errors
+                                    Toast.makeText(
+                                        this@add_user_activity,
+                                        "Failed to retrieve existing user data: ${databaseError.message}",
+                                        Toast.LENGTH_SHORT
+                                    ).show()
+                                }
+
+                            })
+                            val intent = Intent(this@add_user_activity, add_user_activity::class.java)
+                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+                            intent.putExtra("userId", userId)
+                            startActivity(intent)
+                            finish()
+                        }
+                    }
+
                 }
             }
-        }
-        binding.scrollableContent.addUserSubmitButton.setOnClickListener {
-            val intent=Intent(this,home_page_activity::class.java)
-            intent.putExtra("userId",userId)
-            startActivity(intent)
-            finish()
+            binding.scrollableContent.addUserSubmitButton.setOnClickListener {
+                val intent = Intent(this, home_page_activity::class.java)
+                intent.putExtra("userId", userId)
+                startActivity(intent)
+                finish()
+            }
         }
     }
-        fun generateOTP(phoneNUmber:String,name:String, age:String, email:String, flat_no:String, building_no:String, building_name:String,userId:String){
-            PhoneAuthProvider.getInstance().verifyPhoneNumber(
-                phoneNUmber,
-                2,
-                TimeUnit.DAYS,
-                this,
-                object:PhoneAuthProvider.OnVerificationStateChangedCallbacks(){
-                    override fun onVerificationCompleted(credential: PhoneAuthCredential) {
-                        // This method won't be called in your case since we're not performing authentication here
-                    }
-                    override fun onVerificationFailed(e: FirebaseException) {
-                        // Handle error
-                        Toast.makeText(
-                            this@add_user_activity,
-                            "Verification failed: ${e.message}",
-                            Toast.LENGTH_SHORT
-                        ).show()
-                    }
 
-                    override fun onCodeSent(
-                        verificationId: String,
-                        token: PhoneAuthProvider.ForceResendingToken
-                    ) {
-                        saveUserDataToDatabase(name, age, email, flat_no, building_no, building_name,userId,verificationId)
-                        // Save the verification ID for later use
-                        val databaseReference = FirebaseDatabase.getInstance().reference.child("verificationId").child(phoneNUmber)
-                        val verificationMap = mapOf(
-                            "verificationId" to verificationId,
-                            "timestamp" to ServerValue.TIMESTAMP
-                        )
-                        databaseReference.setValue(verificationMap)
-                    }
-                }
-            )
-        }
+}
 
-        private fun saveUserDataToDatabase(
-            name: String,
-            age: String,
-            email: String,
-            flatNo: String,
-            buildingNo: String,
-            buildingName: String,
-            adminid:String,
-            verificationId: String
-        ) {
-            // Save the other input data to the database
-            val userRef = database.reference.child("admin").child(verificationId)
-            userRef.child("name").setValue(name)
-            userRef.child("age").setValue(age)
-            userRef.child("email").setValue(email)
-            userRef.child("flatNo").setValue(flatNo)
-            userRef.child("buildingNo").setValue(buildingNo)
-            userRef.child("buildingName").setValue(buildingName)
-            userRef.child("type").setValue("user")
-            userRef.child("adminId").setValue(adminid)
-            Toast.makeText(this, "User data saved successfully", Toast.LENGTH_SHORT).show()
-        }
-        }
+
