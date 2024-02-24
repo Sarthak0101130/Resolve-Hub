@@ -59,6 +59,7 @@ class VerifyEnterOtp : AppCompatActivity() {
                         inputnumber4.getText().toString() +
                         inputnumber5.getText().toString() +
                         inputnumber6.getText().toString()
+
                 if (getotpbackend != null) {
                     progressBarverifyotp.visibility = View.VISIBLE
                     verifybuttonclick.visibility = View.INVISIBLE
