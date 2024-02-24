@@ -7,12 +7,16 @@ import android.widget.Button
 import android.widget.Toast
 import com.example.complain_management.databinding.ActivityAdminBinding
 import com.example.complain_management.databinding.ActivitySignUpBinding
+import com.google.firebase.FirebaseException
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.PhoneAuthCredential
+import com.google.firebase.auth.PhoneAuthProvider
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.GenericTypeIndicator
 import com.google.firebase.database.ValueEventListener
+import java.util.concurrent.TimeUnit
 
 class Admin : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
@@ -79,6 +83,9 @@ class Admin : AppCompatActivity() {
                         )
                         val verification=Verification(
                             type = "Admin",
+                            phone = number,
+                            verified = "No"
+
                         )
                         val typeRef=database.reference.child("Verification").child(auth.currentUser!!.uid)
                         val databaseRef=database.reference.child("Admin").child(auth.currentUser!!.uid)
@@ -86,9 +93,41 @@ class Admin : AppCompatActivity() {
                             if(it.isSuccessful){
                                 typeRef.setValue(verification).addOnCompleteListener {
                                     if(it.isSuccessful){
-                                        val intent= Intent(this,home_page_activity::class.java)
-                                        intent.putExtra("userId", auth.currentUser!!.uid)
-                                        startActivity(intent)
+                                                PhoneAuthProvider.getInstance().verifyPhoneNumber(
+                                                    "+91$number",
+                                                    2,
+                                                    TimeUnit.MINUTES,
+                                                    this@Admin,
+                                                    object: PhoneAuthProvider.OnVerificationStateChangedCallbacks(){
+                                                        override fun onVerificationCompleted(
+                                                            phoneAuthCredential: PhoneAuthCredential
+                                                        ) {
+                                                            signInWithPhoneAuthCredential( phoneAuthCredential)
+                                                        }
+
+                                                        override fun onVerificationFailed(
+                                                            e: FirebaseException
+                                                        ) {
+                                                            Toast.makeText(this@Admin,e.message,Toast.LENGTH_SHORT).show()
+                                                        }
+
+                                                        override fun onCodeSent(
+                                                            p0: String,
+                                                            p1: PhoneAuthProvider.ForceResendingToken
+                                                        ) {
+                                                            val intent=Intent(
+                                                                this@Admin,
+                                                                OtpVerification::class.java
+                                                            )
+                                                            intent.putExtra("userId",auth.currentUser!!.uid)
+                                                            intent.putExtra("Token",p0)
+                                                            intent.putExtra("Phone","+91$number")
+                                                            intent.putExtra("Type","Admin")
+                                                            startActivity(intent)
+                                                            finish()
+                                                        }
+                                                    }
+                                                )
                                     }else{
                                         Toast.makeText(this,"Admin not registered",Toast.LENGTH_SHORT).show()
                                     }
@@ -103,6 +142,18 @@ class Admin : AppCompatActivity() {
                     }
                 }
             }
+
         }
+
+    }
+    private fun signInWithPhoneAuthCredential(credential: PhoneAuthCredential){
+        auth.signInWithCredential(credential)
+            .addOnCompleteListener(this) {task->
+                if(task.isSuccessful){
+                    Toast.makeText(this@Admin, "Verification successful", Toast.LENGTH_SHORT).show()
+                } else {
+                    Toast.makeText(this@Admin, "Verification failed: ${task.exception?.message}", Toast.LENGTH_SHORT).show()
+                }
+            }
     }
 }

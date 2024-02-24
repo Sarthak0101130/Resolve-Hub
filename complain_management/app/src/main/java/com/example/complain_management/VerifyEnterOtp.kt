@@ -1,21 +1,9 @@
-//import android.app.AppComponentFactory
-//import android.os.Bundle
-//import androidx.appcompat.app.AppCompatActivity
-//import com.example.complain_management.R
-//import com.example.complain_management.databinding.ActivityMainBinding
-//
-//class VerifyEnterOtp : AppCompatActivity() {
-//    private lateinit var binding:
-//    override fun onCreate(savedInstanceState: Bundle?) {
-//        super.onCreate(savedInstanceState)
-//
-//        binding= ActivityMainBinding.inflate(layoutInflater)
-//        setContentView(binding.root)
-//        val userId = intent.getStringExtra("userId")
-//    }
-//}
-//package com.example.otpverification
+import android.text.Editable
+import android.text.TextWatcher
 
+//
+//package com.example.otpverification
+//
 //
 //import android.content.Intent
 //import android.os.Bundle
