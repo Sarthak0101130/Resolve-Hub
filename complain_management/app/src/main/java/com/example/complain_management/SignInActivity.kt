@@ -195,6 +195,5 @@ class SignInActivity : AppCompatActivity() {
                     Toast.makeText(this@SignInActivity, "Verification failed: ${task.exception?.message}", Toast.LENGTH_SHORT).show()
                 }
             }
+        }
     }
-    }
-

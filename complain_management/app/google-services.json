@@ -1,14 +1,13 @@
 {
   "project_info": {
-    "project_number": "1083647881153",
-    "firebase_url": "https://complaint-cloud-default-rtdb.firebaseio.com",
-    "project_id": "complaint-cloud",
-    "storage_bucket": "complaint-cloud.appspot.com"
+    "project_number": "50904241107",
+    "project_id": "resolve-hub-a8de8",
+    "storage_bucket": "resolve-hub-a8de8.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1083647881153:android:71f0ac06ae8acff0f80940",
+        "mobilesdk_app_id": "1:50904241107:android:dd25dd54d77c2aa8e31526",
         "android_client_info": {
           "package_name": "com.example.complain_management"
         }
@@ -16,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyBpoYY2HNJRl0BpWfhGAJA8fuBCxwwuheA"
+          "current_key": "AIzaSyDbvsmdg0D1jdoNMUHrNxU6inhKhmklQeY"
         }
       ],
       "services": {

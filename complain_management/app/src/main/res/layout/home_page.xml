@@ -29,8 +29,8 @@
 
             <ImageView
                 android:id="@+id/image_2"
-                android:layout_width="358dp"
-                android:layout_height="172dp"
+                android:layout_width="380dp"
+                android:layout_height="199dp"
                 android:contentDescription="@string/image_2"
                 android:src="@drawable/image_2"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -63,10 +63,10 @@
                 android:src="@drawable/vector_ek2"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.932"
+                app:layout_constraintHorizontal_bias="0.915"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.994" />
+                app:layout_constraintVertical_bias="0.988" />
 
             <ImageButton
                 android:id="@+id/stroke_1"
@@ -85,22 +85,21 @@
 
             <ImageButton
                 android:id="@+id/rectangle_8"
-                android:layout_width="330dp"
-                android:layout_height="53dp"
-                android:alpha="0.96470588445663"
+                android:layout_width="331dp"
+                android:layout_height="65dp"
                 android:background="@drawable/rectangle_8_shape"
                 android:contentDescription="Description of the button"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.481"
+                app:layout_constraintHorizontal_bias="0.493"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/image_2"
-                app:layout_constraintVertical_bias="0.567" />
+                app:layout_constraintVertical_bias="0.587" />
 
             <ImageButton
                 android:id="@+id/rectangle_8_ek1"
-                android:layout_width="330dp"
-                android:layout_height="50dp"
+                android:layout_width="331dp"
+                android:layout_height="65dp"
                 android:alpha="0.69999998807907"
                 android:background="@drawable/rectangle_8_ek1_shape"
                 android:contentDescription="Description of the button"
@@ -181,45 +180,45 @@
 
             <ImageButton
                 android:id="@+id/rectangle_11"
-                android:layout_width="150dp"
-                android:layout_height="84dp"
+                android:layout_width="151dp"
+                android:layout_height="83dp"
                 android:background="@drawable/rectangle_11_shape"
                 android:contentDescription="Description of the button"
                 app:layout_constraintBottom_toTopOf="@+id/rectangle_8"
                 app:layout_constraintEnd_toStartOf="@+id/rectangle_12"
-                app:layout_constraintHorizontal_bias="0.634"
+                app:layout_constraintHorizontal_bias="0.515"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/edit_user"
-                app:layout_constraintVertical_bias="0.677" />
+                app:layout_constraintVertical_bias="0.715" />
 
             <ImageButton
                 android:id="@+id/rectangle_12"
-                android:layout_width="157dp"
+                android:layout_width="151dp"
                 android:layout_height="83dp"
                 android:alpha="0.91764706373215"
                 android:background="@drawable/rectangle_12_shape"
                 android:contentDescription="Description of the button"
                 app:layout_constraintBottom_toTopOf="@+id/rectangle_8"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.834"
+                app:layout_constraintHorizontal_bias="0.835"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/edit_staff"
-                app:layout_constraintVertical_bias="0.676" />
+                app:layout_constraintVertical_bias="0.715" />
 
             <TextView
                 android:id="@+id/edit_organization"
-                android:layout_width="141dp"
-                android:layout_height="30dp"
+                android:layout_width="142dp"
+                android:layout_height="38dp"
                 android:text="@string/edit_organization_string"
                 android:textColor="@color/_bg__bottom_bar_ek1_color"
                 android:textSize="16sp"
                 android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintBottom_toBottomOf="@+id/rectangle_12"
                 app:layout_constraintEnd_toEndOf="@+id/rectangle_12"
-                app:layout_constraintHorizontal_bias="0.8"
+                app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="@+id/rectangle_12"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.67" />
+                app:layout_constraintTop_toTopOf="@+id/rectangle_12"
+                app:layout_constraintVertical_bias="1.0" />
 
             <ImageView
                 android:id="@+id/vector_ek7"
@@ -229,30 +228,31 @@
                 android:src="@drawable/vector_ek7"
                 app:layout_constraintBottom_toTopOf="@+id/edit_organization"
                 app:layout_constraintEnd_toEndOf="@+id/rectangle_12"
-                app:layout_constraintHorizontal_bias="0.404"
+                app:layout_constraintHorizontal_bias="0.513"
                 app:layout_constraintStart_toStartOf="@+id/rectangle_12"
                 app:layout_constraintTop_toTopOf="@+id/rectangle_12"
-                app:layout_constraintVertical_bias="0.476" />
+                app:layout_constraintVertical_bias="1.0" />
 
             <ImageButton
                 android:id="@+id/rectangle_8_ek2"
                 android:layout_width="151dp"
                 android:layout_height="83dp"
-                android:alpha="0.69999998807907"
                 android:background="@drawable/rectangle_8_ek2_shape"
                 android:contentDescription="Description of the button"
                 app:layout_constraintBottom_toTopOf="@+id/rectangle_11"
                 app:layout_constraintEnd_toStartOf="@+id/rectangle_10"
-                app:layout_constraintHorizontal_bias="0.617"
+                app:layout_constraintHorizontal_bias="0.515"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/image_2"
-                app:layout_constraintVertical_bias="0.513" />
+                app:layout_constraintVertical_bias="0.515" />
+
             <TextView
                 android:id="@+id/edit_user"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:gravity="center"
                 android:text="@string/edit_user_string"
-                android:textColor="@color/_bg__bottom_bar_ek1_color"
+                android:textColor="@color/black"
                 android:textSize="21sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -260,7 +260,7 @@
                 app:layout_constraintHorizontal_bias="0.515"
                 app:layout_constraintStart_toStartOf="@+id/rectangle_8_ek2"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.507" />
+                app:layout_constraintVertical_bias="0.515" />
 
             <ImageView
                 android:id="@+id/vector_ek8"
@@ -268,18 +268,18 @@
                 android:layout_height="wrap_content"
                 android:contentDescription="@string/vector_ek8"
                 android:src="@drawable/vector_ek8"
+                app:flow_horizontalAlign="center"
                 app:layout_constraintBottom_toTopOf="@+id/edit_user"
                 app:layout_constraintEnd_toEndOf="@+id/rectangle_8_ek2"
-                app:layout_constraintHorizontal_bias="0.483"
+                app:layout_constraintHorizontal_bias="0.515"
                 app:layout_constraintStart_toStartOf="@+id/rectangle_8_ek2"
                 app:layout_constraintTop_toTopOf="@+id/rectangle_8_ek2"
                 app:layout_constraintVertical_bias="1.0" />
 
             <ImageButton
                 android:id="@+id/rectangle_10"
-                android:layout_width="155dp"
-                android:layout_height="82dp"
-                android:alpha="0.69999998807907"
+                android:layout_width="151dp"
+                android:layout_height="83dp"
                 android:background="@drawable/rectangle_10_shape"
                 android:contentDescription="Description of the button"
                 app:layout_constraintBottom_toTopOf="@+id/rectangle_12"
@@ -287,22 +287,22 @@
                 app:layout_constraintHorizontal_bias="0.835"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/image_2"
-                app:layout_constraintVertical_bias="0.521" />
+                app:layout_constraintVertical_bias="0.515" />
 
             <TextView
                 android:id="@+id/edit_staff"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/edit_staff_string"
-                android:textColor="@color/_bg__bottom_bar_ek1_color"
+                android:textColor="@color/black"
                 android:textSize="21sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/rectangle_10"
-                app:layout_constraintHorizontal_bias="0.343"
+                app:layout_constraintHorizontal_bias="0.515"
                 app:layout_constraintStart_toStartOf="@+id/rectangle_10"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.508" />
+                app:layout_constraintVertical_bias="0.515" />
 
             <TextView
                 android:id="@+id/edit_service"
@@ -314,10 +314,10 @@
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="@+id/rectangle_11"
                 app:layout_constraintEnd_toEndOf="@+id/rectangle_11"
-                app:layout_constraintHorizontal_bias="0.346"
+                app:layout_constraintHorizontal_bias="0.515"
                 app:layout_constraintStart_toStartOf="@+id/rectangle_11"
                 app:layout_constraintTop_toTopOf="@+id/rectangle_11"
-                app:layout_constraintVertical_bias="0.795" />
+                app:layout_constraintVertical_bias="0.715" />
 
             <ImageView
                 android:id="@+id/vector_ek6"
@@ -327,10 +327,10 @@
                 android:src="@drawable/vector_ek6"
                 app:layout_constraintBottom_toTopOf="@+id/edit_staff"
                 app:layout_constraintEnd_toEndOf="@+id/rectangle_10"
-                app:layout_constraintHorizontal_bias="0.394"
+                app:layout_constraintHorizontal_bias="0.515"
                 app:layout_constraintStart_toStartOf="@+id/rectangle_10"
                 app:layout_constraintTop_toTopOf="@+id/rectangle_10"
-                app:layout_constraintVertical_bias="0.928" />
+                app:layout_constraintVertical_bias="1" />
 
             <ImageView
                 android:id="@+id/vector_ek9"
@@ -341,7 +341,7 @@
                 android:src="@drawable/vector_ek9"
                 app:layout_constraintBottom_toTopOf="@+id/edit_service"
                 app:layout_constraintEnd_toEndOf="@+id/rectangle_11"
-                app:layout_constraintHorizontal_bias="0.448"
+                app:layout_constraintHorizontal_bias="0.515"
                 app:layout_constraintStart_toStartOf="@+id/rectangle_11"
                 app:layout_constraintTop_toTopOf="@+id/rectangle_11"
                 app:layout_constraintVertical_bias="1.0" />
@@ -351,44 +351,45 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="serif"
+                android:gravity="center"
                 android:text="@string/welcome_admin____string"
                 android:textColor="@color/_bg__bottom_bar_ek1_color"
 
                 android:textSize="24sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.27"
+                app:layout_constraintHorizontal_bias="0.224"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.086" />
+                app:layout_constraintVertical_bias="0.084" />
 
             <ImageButton
                 android:id="@+id/vector_ek10"
-                android:layout_width="57dp"
-                android:layout_height="65dp"
+                android:layout_width="48dp"
+                android:layout_height="69dp"
                 android:background="@color/white"
                 android:contentDescription="@string/vector_ek10"
                 android:src="@drawable/vector_ek10"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.98"
+                app:layout_constraintHorizontal_bias="0.958"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.001" />
+                app:layout_constraintVertical_bias="0.011" />
 
             <TextView
                 android:id="@+id/company_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="132dp"
+                android:layout_height="21dp"
                 android:text="@string/company_name_string"
                 android:textColor="@color/_bg__bottom_bar_ek1_color"
                 android:textSize="12sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.405"
+                app:layout_constraintHorizontal_bias="0.232"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.041" />
+                app:layout_constraintVertical_bias="0.033" />
 
             <ImageView
                 android:id="@+id/vector_ek11"
@@ -398,15 +399,15 @@
                 android:src="@drawable/vector_ek11"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.072"
+                app:layout_constraintHorizontal_bias="0.024"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.026" />
+                app:layout_constraintVertical_bias="0.025" />
 
             <ImageButton
                 android:id="@+id/vector_ek12"
-                android:layout_width="51dp"
-                android:layout_height="59dp"
+                android:layout_width="48dp"
+                android:layout_height="69dp"
                 android:background="@color/white"
                 android:contentDescription="@string/vector_ek12"
                 android:src="@drawable/vector_ek12"

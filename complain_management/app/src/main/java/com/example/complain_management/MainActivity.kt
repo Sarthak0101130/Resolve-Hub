@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.mainGetStartedButton.setOnClickListener{
-            val intent= Intent(this,SignInActivity::class.java)
+            val intent= Intent(this,home_page_activity::class.java)
             startActivity(intent)
         }
     }
