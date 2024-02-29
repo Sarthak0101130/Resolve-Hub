@@ -118,12 +118,10 @@
                     android:layout_below="@+id/complaint_desc_input_layout"
                     android:layout_alignParentStart="true"
                     android:layout_centerHorizontal="true"
-                    android:layout_marginStart="67dp"
-                    android:layout_marginTop="22dp"
+                    android:layout_marginStart="62dp"
+                    android:layout_marginTop="21dp"
                     android:layout_marginEnd="35dp"
-                    android:background="@color/colorview"
                     tools:ignore="InvalidId" />
-
 
                 <ImageButton
                     android:id="@+id/request_complaint_select_image"

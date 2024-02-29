@@ -136,7 +136,7 @@ class OtpVerification : AppCompatActivity() {
                 }
                 binding.textresendotp.setOnClickListener {
                     PhoneAuthProvider.getInstance().verifyPhoneNumber(
-                        "+91$phone",
+                        phone.toString(),
                         2,
                         TimeUnit.MINUTES,
                         this@OtpVerification,
