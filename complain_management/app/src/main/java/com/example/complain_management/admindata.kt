@@ -1,7 +1,7 @@
 package com.example.complain_management
 
 data class AdminData(
-    var email:String?= null,
+    val email:String?= null,
     var name:String?= null,
     var number:String?= null,
     var organizationname:String?= null,

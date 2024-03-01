@@ -32,6 +32,7 @@ class Register_Complaint : AppCompatActivity() {
                 // Camera permission granted, proceed with camera-related operations
                 captureImage()
             } else {
+                requestCameraPermission()
                 // Camera permission denied, handle accordingly
                 // You might want to show a message to the user or request the permission again
             }
@@ -143,7 +144,7 @@ class Register_Complaint : AppCompatActivity() {
 
         try {
             val outputStream = FileOutputStream(file)
-            bitmap.compress(Bitmap.CompressFormat.JPEG, 500, outputStream)
+            bitmap.compress(Bitmap.CompressFormat.PNG, 100, outputStream)
             outputStream.flush()
             outputStream.close()
             return Uri.fromFile(file)

@@ -93,7 +93,7 @@
                 app:layout_constraintTop_toTopOf="@+id/user_home_page_society_guidelines_box" />
 
 
-            <View
+            <ImageButton
                 android:id="@+id/user_home_page_register_complaint_box"
                 android:layout_width="320dp"
                 android:layout_height="52dp"
