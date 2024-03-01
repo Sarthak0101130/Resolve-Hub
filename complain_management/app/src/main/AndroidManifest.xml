@@ -6,6 +6,10 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
 
+
+    <uses-permission android:name="android.permission.CAMERA"
+        tools:ignore="PermissionImpliesUnsupportedChromeOsHardware" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -19,9 +23,6 @@
         <activity
             android:name=".Register_Complaint"
             android:exported="false" />
-        <!-- <activity -->
-        <!-- android:name=".EnterMobileNumber" -->
-        <!-- android:exported="false" /> -->
         <activity
             android:name=".OtpVerification"
             android:exported="false" />

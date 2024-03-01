@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.mainGetStartedButton.setOnClickListener{
-            val intent= Intent(this,Register_Complaint::class.java)
+            val intent= Intent(this,SignInActivity::class.java)
             startActivity(intent)
         }
     }

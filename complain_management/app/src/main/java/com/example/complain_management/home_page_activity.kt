@@ -9,9 +9,12 @@ class home_page_activity : AppCompatActivity() {
     private lateinit var binding: HomePageBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         binding = HomePageBinding.inflate(layoutInflater)
         setContentView(binding.root)
         val userId = intent.getStringExtra("userId")
+
+
         binding.rectangle8Ek2.setOnClickListener{
             val intent= Intent(this,edit_user_activity::class.java)
             intent.putExtra("userId",userId)
