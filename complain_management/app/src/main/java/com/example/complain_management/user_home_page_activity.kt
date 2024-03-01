@@ -12,8 +12,10 @@ class user_home_page_activity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = UserHomePageBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        val userId=intent.getStringExtra("userId")
         binding.userHomePageRegisterComplaintBox.setOnClickListener {
            val intent= Intent(this@user_home_page_activity,Register_Complaint::class.java)
+            intent.putExtra(userId,"userId")
             startActivity(intent)
             finish()
         }

@@ -30,3 +30,10 @@ data class Verification(
     var phone:String?=null
                                                                                        
 )
+
+data class UserComplain(
+    var ComplainType: String?=null,
+    var ComplainSubject: String?=null,
+    var ComplainDescription: String?=null,
+    var image:String?=null
+)

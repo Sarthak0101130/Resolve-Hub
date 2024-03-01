@@ -75,6 +75,7 @@ class Register_Complaint : AppCompatActivity() {
         // Inflate the layout using ViewBinding
         binding= ActivityRegisterComplaintBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        val userId=intent.getStringExtra("userid")
 
         // Initialize Firebase database
         database=FirebaseDatabase.getInstance()
@@ -86,6 +87,25 @@ class Register_Complaint : AppCompatActivity() {
         }
         binding.requestComplaintScrollableContent.requestComplaintSelectImage.setOnClickListener {
             openGallery()
+        }
+        binding.requestComplaintScrollableContent.requestComplaintSubmitComplaint.setOnClickListener{
+            val complainType=binding.requestComplaintScrollableContent.complaintTypeInput.text.toString()
+            val complainSubject=binding.requestComplaintScrollableContent.complaintSubjectInput.text.toString()
+            val complainDescription=binding.requestComplaintScrollableContent.complaintDescInput.text.toString()
+            if(complainType.isEmpty() || complainDescription.isEmpty() || complainSubject.isEmpty()){
+                if(complainType.isEmpty()){
+                    Toast.makeText(this@Register_Complaint,"Please Enter Complain Type",Toast.LENGTH_SHORT).show()
+                }
+                if(complainSubject.isEmpty()){
+                    Toast.makeText(this@Register_Complaint,"Please Enter Complain Subject",Toast.LENGTH_SHORT).show()
+                }
+                if(complainDescription.isEmpty()){
+                    Toast.makeText(this@Register_Complaint,"Please Enter Complain Description",Toast.LENGTH_SHORT).show()
+                }
+            }else{
+                savetodatabase(complainType,complainSubject,complainDescription,imageUri,userId.toString())
+            }
+
         }
         if (imageUri != null) {
             Toast.makeText(this@Register_Complaint,imageUri.toString(),Toast.LENGTH_SHORT).show()
@@ -132,6 +152,26 @@ class Register_Complaint : AppCompatActivity() {
             binding.requestComplaintScrollableContent.requestComplaintImage.setImageURI(it)
             binding.requestComplaintScrollableContent.requestComplaintImage.visibility=ImageView.VISIBLE
         }
+    }
+
+    private fun savetodatabase(complainType:String,complainSubject:String,complainDescription:String,imageUri:Uri?,userId:String){
+        val complainData=UserComplain(
+            ComplainType = complainType,
+            ComplainSubject = complainSubject,
+            ComplainDescription = complainDescription,
+            image = imageUri.toString(),
+        )
+        val userRef=database.reference.child("ComplainUser").child(userId!!)
+        userRef.setValue(complainData).addOnCompleteListener {
+            Toast.makeText(this@Register_Complaint, "Registered Successfully", Toast.LENGTH_SHORT).show()
+            val intent=Intent(this@Register_Complaint,user_home_page_activity::class.java)
+            intent.putExtra(userId,"UserId")
+            startActivity(intent)
+            finish()
+        }
+            .addOnFailureListener {
+                Toast.makeText(this, "Failed to register", Toast.LENGTH_SHORT).show()
+            }
     }
     private fun saveImageToGallery(bitmap: Bitmap): Uri? {
         // Implement the logic to save the Bitmap to a file and return the file's Uri
