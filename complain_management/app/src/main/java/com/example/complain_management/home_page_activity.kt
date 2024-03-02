@@ -4,9 +4,14 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.complain_management.databinding.HomePageBinding
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.AdView
+import com.google.android.gms.ads.MobileAds
 
 class home_page_activity : AppCompatActivity() {
     private lateinit var binding: HomePageBinding
+    lateinit var mAdView1 : AdView
+    lateinit var mAdView2 : AdView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -30,5 +35,24 @@ class home_page_activity : AppCompatActivity() {
             val intent= Intent(this,edit_services_activity::class.java)
             startActivity(intent)
         }
+
+        addAdView1()
+        addAdView2()
+    }
+
+    private fun addAdView2() {
+        MobileAds.initialize(this) {}
+
+        mAdView2 = findViewById(R.id.image_2)
+        val adRequest = AdRequest.Builder().build()
+        mAdView2.loadAd(adRequest)
+    }
+
+    private fun addAdView1() {
+        MobileAds.initialize(this) {}
+
+        mAdView1 = findViewById(R.id.image_1)
+        val adRequest = AdRequest.Builder().build()
+        mAdView1.loadAd(adRequest)
     }
 }
