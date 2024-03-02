@@ -160,6 +160,7 @@ class Register_Complaint : AppCompatActivity() {
             ComplainSubject = complainSubject,
             ComplainDescription = complainDescription,
             image = imageUri.toString(),
+
         )
         val userRef=database.reference.child("ComplainUser").child(userId!!)
         userRef.setValue(complainData).addOnCompleteListener {
