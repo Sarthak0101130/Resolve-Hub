@@ -27,18 +27,38 @@
             tools:ignore="ExtraText">
 
 
-            <ImageView
-                android:id="@+id/image_2"
-                android:layout_width="380dp"
-                android:layout_height="199dp"
-                android:contentDescription="@string/image_2"
-                android:src="@drawable/image_2"
+            <com.google.android.gms.ads.AdView
+                android:id="@+id/image_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                app:adSize="BANNER"
+                app:adUnitId="ca-app-pub-3940256099942544/6300978111"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.494"
+                app:layout_constraintHorizontal_bias="0.56"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.194" />
+                app:layout_constraintVertical_bias="0.171">
+
+            </com.google.android.gms.ads.AdView>
+
+            <com.google.android.gms.ads.AdView
+                android:id="@+id/image_2"
+                android:layout_width="wrap_content"
+                android:layout_height="199dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                app:adSize="BANNER"
+                app:adUnitId="ca-app-pub-3940256099942544/6300978111"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.516"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.193">
+            </com.google.android.gms.ads.AdView>
 
             <ImageButton
                 android:id="@+id/vector_ek1"
