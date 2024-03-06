@@ -35,5 +35,6 @@ data class UserComplain(
     var ComplainType: String?=null,
     var ComplainSubject: String?=null,
     var ComplainDescription: String?=null,
-    var image:String?=null
+    var image:String?=null,
+    var verified:String?="No",
 )
