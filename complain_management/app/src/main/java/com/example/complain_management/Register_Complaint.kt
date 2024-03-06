@@ -75,7 +75,7 @@ class Register_Complaint : AppCompatActivity() {
         // Inflate the layout using ViewBinding
         binding= ActivityRegisterComplaintBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        val userId=intent.getStringExtra("userid")
+        val userId=intent.getStringExtra("userId")
 
         // Initialize Firebase database
         database=FirebaseDatabase.getInstance()
@@ -162,17 +162,23 @@ class Register_Complaint : AppCompatActivity() {
             image = imageUri.toString(),
 
         )
-        val userRef=database.reference.child("ComplainUser").child(userId!!)
-        userRef.setValue(complainData).addOnCompleteListener {
-            Toast.makeText(this@Register_Complaint, "Registered Successfully", Toast.LENGTH_SHORT).show()
-            val intent=Intent(this@Register_Complaint,user_home_page_activity::class.java)
-            intent.putExtra(userId,"UserId")
-            startActivity(intent)
-            finish()
-        }
-            .addOnFailureListener {
-                Toast.makeText(this, "Failed to register", Toast.LENGTH_SHORT).show()
+        Toast.makeText(this@Register_Complaint,userId.toString(),Toast.LENGTH_SHORT).show()
+        val userRef=database.reference.child("ComplainUser")
+        val compainkey=userRef.child(userId!!).push().key
+        if(compainkey!=null){
+            userRef.child(userId).child(compainkey).setValue(complainData)
+                .addOnCompleteListener {
+                Toast.makeText(this@Register_Complaint, "Registered Successfully", Toast.LENGTH_SHORT).show()
+                val intent=Intent(this@Register_Complaint,user_home_page_activity::class.java)
+                intent.putExtra("userId",userId)
+                startActivity(intent)
+                finish()
             }
+                .addOnFailureListener {
+                    Toast.makeText(this, "Failed to register", Toast.LENGTH_SHORT).show()
+                }
+        }
+
     }
     private fun saveImageToGallery(bitmap: Bitmap): Uri? {
         // Implement the logic to save the Bitmap to a file and return the file's Uri

@@ -3,6 +3,7 @@ package com.example.complain_management
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import com.example.complain_management.databinding.ActivityServicesBinding
 import com.example.complain_management.databinding.UserHomePageBinding
 import com.google.android.gms.ads.AdRequest
@@ -18,13 +19,19 @@ class user_home_page_activity : AppCompatActivity() {
         binding = UserHomePageBinding.inflate(layoutInflater)
         setContentView(binding.root)
         val userId=intent.getStringExtra("userId")
+        Toast.makeText(this@user_home_page_activity,userId.toString(),Toast.LENGTH_SHORT).show()
         binding.userHomePageRegisterComplaintBox.setOnClickListener {
            val intent= Intent(this@user_home_page_activity,Register_Complaint::class.java)
-            intent.putExtra(userId,"userId")
+            intent.putExtra("userId",userId)
             startActivity(intent)
             finish()
         }
-
+        binding.userHomePageViewComplaintsBox.setOnClickListener {
+            val intent=Intent(this@user_home_page_activity,User_View_Complain::class.java)
+            intent.putExtra("userId",userId)
+            startActivity(intent)
+            finish()
+        }
         userad1()
         userad2()
     }
