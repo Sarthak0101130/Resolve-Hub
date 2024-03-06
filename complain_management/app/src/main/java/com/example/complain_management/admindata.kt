@@ -38,3 +38,7 @@ data class UserComplain(
     var image:String?=null,
     var verified:String?="No",
 )
+data class AdminComplain(
+    val userComplain: UserComplain,
+    val userData: UserData,
+)

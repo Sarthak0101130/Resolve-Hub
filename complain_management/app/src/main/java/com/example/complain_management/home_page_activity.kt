@@ -35,6 +35,12 @@ class home_page_activity : AppCompatActivity() {
             val intent= Intent(this,edit_services_activity::class.java)
             startActivity(intent)
         }
+        binding.rectangle8.setOnClickListener {
+            val intent= Intent(this,admin_complain_view::class.java)
+            intent.putExtra("userId",userId)
+            startActivity(intent)
+            finish()
+        }
 
         addAdView1()
         addAdView2()

@@ -14,6 +14,44 @@
         android:layout_gravity="center"
         android:layout_marginTop="6dp"
         android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Name:" />
+
+            <TextView
+                android:id="@+id/admin_view_complain_name_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:text="Sourabh" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Number:" />
+
+            <TextView
+                android:id="@+id/admin_view_complain_number_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:text="Phone No." />
+
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -27,7 +65,7 @@
                 android:text="Type:" />
 
             <TextView
-                android:id="@+id/user_complain_view_type_text"
+                android:id="@+id/admin_view_complain_type_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="25dp"
@@ -47,7 +85,7 @@
                 android:text="Subject:" />
 
             <TextView
-                android:id="@+id/user_complain_view_subject_text"
+                android:id="@+id/admin_view_complain_subject_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="-3dp"
@@ -65,7 +103,7 @@
                 android:text="Status:" />
 
             <TextView
-                android:id="@+id/user_complain_view_verified_text"
+                android:id="@+id/admin_view_complain_verified_text"
                 android:layout_width="54dp"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="16dp"
