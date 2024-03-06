@@ -185,7 +185,7 @@ class Register_Complaint : AppCompatActivity() {
 
         try {
             val outputStream = FileOutputStream(file)
-            bitmap.compress(Bitmap.CompressFormat.PNG, 200, outputStream)
+            bitmap.compress(Bitmap.CompressFormat.PNG, 100, outputStream)
             outputStream.flush()
             outputStream.close()
             return Uri.fromFile(file)
