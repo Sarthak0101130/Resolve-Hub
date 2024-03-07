@@ -6,12 +6,10 @@
 
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-
-
-
-    <uses-permission android:name="android.permission.CAMERA"
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission
+        android:name="android.permission.CAMERA"
         tools:ignore="PermissionImpliesUnsupportedChromeOsHardware" />
 
     <application
@@ -24,6 +22,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Complain_management"
         tools:targetApi="31">
+        <activity
+            android:name=".user_complaint_detailed_view"
+            android:exported="false" />
+        <activity
+            android:name=".admin_complain_view"
+            android:exported="false" />
         <activity
             android:name=".User_View_Complain"
             android:exported="false" />
@@ -75,9 +79,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-3940256099942544~3347511713"/>
+            android:value="ca-app-pub-3940256099942544~3347511713" />
     </application>
 
 </manifest>

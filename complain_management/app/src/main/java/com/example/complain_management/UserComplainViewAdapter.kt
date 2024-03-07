@@ -1,11 +1,13 @@
 package com.example.complain_management
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.TextView
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
-import org.w3c.dom.Text
 
 class UserComplainViewAdapter(private val userList:ArrayList<UserComplain>) :
     RecyclerView.Adapter<UserComplainViewAdapter.MyViewHolder>() {
@@ -27,14 +29,21 @@ class UserComplainViewAdapter(private val userList:ArrayList<UserComplain>) :
         holder.complain_type.text=currentitem.ComplainType
         holder.complain_subject.text=currentitem.ComplainSubject
         holder.verified.text=currentitem.verified
+        holder.userViewDetailedComplaintButton.setOnClickListener{
+            val intent= Intent(holder.itemView.context,user_complaint_detailed_view::class.java)
+            intent.putExtra("complainId",currentitem.ComplainId)
+            intent.putExtra("userId",currentitem.userId)
+           holder.itemView.context.startActivity(intent)
+        }
     }
 
     override fun getItemCount(): Int {
         return userList.size
     }
     class MyViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
-        val complain_type:TextView=itemView.findViewById(R.id.type_text)
-        val complain_subject: TextView=itemView.findViewById(R.id.subject_text)
-        val verified:TextView=itemView.findViewById(R.id.verified_text)
+        val complain_type:TextView=itemView.findViewById(R.id.user_complain_view_type_text)
+        val complain_subject: TextView=itemView.findViewById(R.id.user_complain_view_subject_text)
+        val verified:TextView=itemView.findViewById(R.id.user_complain_view_verified_text)
+        val userViewDetailedComplaintButton:Button=itemView.findViewById(R.id.user_compliant_view_detailed_complaint)
     }
 }
