@@ -19,6 +19,9 @@ import com.google.firebase.database.FirebaseDatabase
 import java.io.File
 import java.io.FileOutputStream
 import java.io.IOException
+import java.text.SimpleDateFormat
+import java.util.Date
+import java.util.Locale
 
 
 class Register_Complaint : AppCompatActivity() {
@@ -155,16 +158,28 @@ class Register_Complaint : AppCompatActivity() {
     }
 
     private fun savetodatabase(complainType:String,complainSubject:String,complainDescription:String,imageUri:Uri?,userId:String){
+        Toast.makeText(this@Register_Complaint,userId.toString(),Toast.LENGTH_SHORT).show()
+        val userRef=database.reference.child("ComplainUser")
+        val compainkey=userRef.child(userId!!).push().key
+        val currentTimeMillis = System.currentTimeMillis()
+
+// Define the date format
+        val dateFormat = SimpleDateFormat("dd-MM-yyyy HH:mm:ss", Locale.getDefault())
+
+// Format the timestamp into a string
+        val formattedDate = dateFormat.format(Date(currentTimeMillis))
         val complainData=UserComplain(
+            ComplainId = compainkey,
+            userId=userId,
             ComplainType = complainType,
             ComplainSubject = complainSubject,
             ComplainDescription = complainDescription,
             image = imageUri.toString(),
+            complain_time = formattedDate,
 
         )
-        Toast.makeText(this@Register_Complaint,userId.toString(),Toast.LENGTH_SHORT).show()
-        val userRef=database.reference.child("ComplainUser")
-        val compainkey=userRef.child(userId!!).push().key
+
+
         if(compainkey!=null){
             userRef.child(userId).child(compainkey).setValue(complainData)
                 .addOnCompleteListener {

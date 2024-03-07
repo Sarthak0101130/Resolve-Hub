@@ -32,12 +32,17 @@ data class Verification(
 )
 
 data class UserComplain(
+    var ComplainId: String? = null,
+    var userId:String?=null,
     var ComplainType: String?=null,
     var ComplainSubject: String?=null,
     var ComplainDescription: String?=null,
     var image:String?=null,
     var verified:String?="No",
+    var complain_time:String?=null,
+    var completed_solved_time:String?="Problem Not Solved",
 )
+
 data class AdminComplain(
     val userComplain: UserComplain,
     val userData: UserData,

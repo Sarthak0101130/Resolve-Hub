@@ -71,6 +71,14 @@
                 android:layout_marginLeft="16dp"
                 android:text="Solved" />
         </LinearLayout>
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/user_compliant_view_detailed_complaint"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textColor="@color/black"
+            android:background="@color/yellow">
+
+        </androidx.appcompat.widget.AppCompatButton>
 
     </LinearLayout>
 </androidx.cardview.widget.CardView>
