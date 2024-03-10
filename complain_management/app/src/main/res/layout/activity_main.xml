@@ -11,7 +11,7 @@
     <RelativeLayout android:id="@+id/content_container"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@color/white"
+        android:background="#fbdbc8"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -30,6 +30,7 @@
                 android:id="@+id/main_page"
                 android:background="@drawable/_bg__main_ek2_shape"
                 android:layout_width="match_parent"
+                android:backgroundTint="#fbdbc8"
                 android:layout_height="match_parent"
 
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -40,21 +41,23 @@
             <ImageButton
                 android:id="@+id/main_get_started_button"
                 android:layout_width="311dp"
-                android:contentDescription="Description of the button"
                 android:layout_height="57dp"
                 android:background="@drawable/main_get_started_button_shape"
+                android:contentDescription="Description of the button"
+                android:outlineSpotShadowColor="@color/white"
+                android:outlineAmbientShadowColor="@color/white"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/main_logo"
-                app:layout_constraintVertical_bias="0.501" />
+                app:layout_constraintVertical_bias="0.38" />
 
             <TextView
                 android:id="@+id/main_get_started_text"
                 android:layout_width="179.4dp"
                 android:layout_height="37.4dp"
                 android:text="@string/main_get_started_text_string"
-                android:textColor="@color/main_get_started_text_color"
+                android:textColor="@color/white"
                 android:textSize="24sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="@+id/main_get_started_button"
@@ -65,8 +68,8 @@
 
             <ImageView
                 android:id="@+id/main_logo"
-                android:layout_width="347dp"
-                android:layout_height="176dp"
+                android:layout_width="382dp"
+                android:layout_height="295dp"
                 android:contentDescription="main_logo"
                 android:src="@drawable/main_logo"
                 app:layout_constraintBottom_toBottomOf="parent"

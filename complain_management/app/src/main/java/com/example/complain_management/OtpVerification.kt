@@ -30,147 +30,147 @@ class OtpVerification : AppCompatActivity() {
     private lateinit var inputnumber6: EditText
     var token: String? = null
 
-            override fun onCreate(savedInstanceState: Bundle?) {
+    override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         binding= ActivityOtpVerificationBinding.inflate(layoutInflater)
         setContentView(binding.root)
-                var type=intent.getStringExtra("Type")
+        var type=intent.getStringExtra("Type")
         val userId = intent.getStringExtra("userId")
-                token=intent.getStringExtra("Token")
-                firebaseAuth = FirebaseAuth.getInstance()
-                val phone=intent.getStringExtra("Phone")
-                 inputnumber1=binding.inputotp1
-                 inputnumber2=binding.inputotp2
-                 inputnumber3=binding.inputotp3
-                 inputnumber4=binding.inputotp4
-                 inputnumber5=binding.inputotp5
-                 inputnumber6=binding.inputotp6
-                numberotpmove(
-                )
-                val progressbar=binding.progressbarVerifyOtp
-                binding.buttonsubmitotp.setOnClickListener{
-                    if (!inputnumber1.text.toString().trim { it <= ' ' }
+        token=intent.getStringExtra("Token")
+        firebaseAuth = FirebaseAuth.getInstance()
+        val phone=intent.getStringExtra("Phone")
+        inputnumber1=binding.inputotp1
+        inputnumber2=binding.inputotp2
+        inputnumber3=binding.inputotp3
+        inputnumber4=binding.inputotp4
+        inputnumber5=binding.inputotp5
+        inputnumber6=binding.inputotp6
+        numberotpmove(
+        )
+        val progressbar=binding.progressbarVerifyOtp
+        binding.buttonsubmitotp.setOnClickListener{
+            if (!inputnumber1.text.toString().trim { it <= ' ' }
                     .isEmpty() && !inputnumber2.text.toString().trim { it <= ' ' }
                     .isEmpty() && !inputnumber3.text.toString().trim { it <= ' ' }
                     .isEmpty() && !inputnumber4.text.toString().trim { it <= ' ' }
                     .isEmpty() && !inputnumber5.text.toString().trim { it <= ' ' }
                     .isEmpty() && !inputnumber6.text.toString().trim { it <= ' ' }
                     .isEmpty()) {
-                        val entercodeotp = inputnumber1.text.toString()+
+                val entercodeotp = inputnumber1.text.toString()+
                         inputnumber2.text.toString() +
                         inputnumber3.text.toString() +
                         inputnumber4.text.toString() +
                         inputnumber5.text.toString() +
                         inputnumber6.text.toString()
-                        if(token!=null){
-                            progressbar.visibility= View.VISIBLE
+                if(token!=null){
+                    progressbar.visibility= View.VISIBLE
+                    binding.buttonsubmitotp.visibility=View.VISIBLE
+                    val phoneAuthCredential=PhoneAuthProvider.getCredential(
+                        token!!,entercodeotp
+                    )
+                    FirebaseAuth.getInstance().signInWithCredential(phoneAuthCredential)
+                        .addOnCompleteListener { task->
+                            progressbar.visibility=View.GONE
                             binding.buttonsubmitotp.visibility=View.VISIBLE
-                            val phoneAuthCredential=PhoneAuthProvider.getCredential(
-                                token!!,entercodeotp
-                            )
-                            FirebaseAuth.getInstance().signInWithCredential(phoneAuthCredential)
-                                .addOnCompleteListener { task->
-                                    progressbar.visibility=View.GONE
-                                    binding.buttonsubmitotp.visibility=View.VISIBLE
-                                    if(task.isSuccessful){
-                                        val updateMap = mapOf<String, Any>(
-                                            "verified" to "Yes"
-                                        )
+                            if(task.isSuccessful){
+                                val updateMap = mapOf<String, Any>(
+                                    "verified" to "Yes"
+                                )
+                                Toast.makeText(
+                                    this@OtpVerification,
+                                    "Entered verification process",
+                                    Toast.LENGTH_SHORT
+                                ).show()
+                                val verificationRef=FirebaseDatabase.getInstance().getReference("Verification").child(userId!!)
+                                verificationRef.updateChildren(updateMap).addOnCompleteListener {
+                                    Toast.makeText(
+                                        this@OtpVerification,
+                                        "verification process completer",
+                                        Toast.LENGTH_SHORT
+                                    ).show()
+                                }
+                                    .addOnFailureListener { e->
                                         Toast.makeText(
                                             this@OtpVerification,
-                                            "Entered verification process",
+                                            e.message,
                                             Toast.LENGTH_SHORT
                                         ).show()
-                                        val verificationRef=FirebaseDatabase.getInstance().getReference("Verification").child(userId!!)
-                                        verificationRef.updateChildren(updateMap).addOnCompleteListener {
-                                            Toast.makeText(
-                                                this@OtpVerification,
-                                                "verification process completer",
-                                                Toast.LENGTH_SHORT
-                                            ).show()
-                                        }
-                                            .addOnFailureListener { e->
-                                                Toast.makeText(
-                                                    this@OtpVerification,
-                                                    e.message,
-                                                    Toast.LENGTH_SHORT
-                                                ).show()
-                                            }
-                                        when(type!!){
-                                            "User"->{
-                                                val intent= Intent(this@OtpVerification,user_home_page_activity::class.java)
-                                                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP)
-                                                intent.putExtra("UserId",userId)
-                                                startActivity(intent)
-                                            }
-                                            "Admin"->{
-                                                val intent= Intent(this@OtpVerification,home_page_activity::class.java)
-                                                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP)
-                                                intent.putExtra("UserId",userId)
-                                                startActivity(intent)
-                                            }
-                                            else->{
-                                                Toast.makeText(this@OtpVerification,"Unexpected Type",Toast.LENGTH_SHORT).show()
-                                            }
-                                        }
-
                                     }
-                                    else {
+                                when(type!!){
+                                    "User"->{
+                                        val intent= Intent(this@OtpVerification,user_home_page_activity::class.java)
+                                        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP)
+                                        intent.putExtra("UserId",userId)
+                                        startActivity(intent)
+                                    }
+                                    "Admin"->{
+                                        val intent= Intent(this@OtpVerification,home_page_activity::class.java)
+                                        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP)
+                                        intent.putExtra("UserId",userId)
+                                        startActivity(intent)
+                                    }
+                                    else->{
+                                        Toast.makeText(this@OtpVerification,"Unexpected Type",Toast.LENGTH_SHORT).show()
+                                    }
+                                }
+
+                            }
+                            else {
                                 Toast.makeText(
                                     this@OtpVerification,
                                     "Enter the Correct OTP",
                                     Toast.LENGTH_SHORT
                                 ).show()
                             }
-                                }
-                        }else {
+                        }
+                }else {
                     Toast.makeText(this@OtpVerification, "CHECk CONNECTION", Toast.LENGTH_SHORT)
                         .show()
                 }
-                        Toast.makeText(this@OtpVerification,"OTP VERIFYING",Toast.LENGTH_SHORT).show()
-                    }else {
+                Toast.makeText(this@OtpVerification,"OTP VERIFYING",Toast.LENGTH_SHORT).show()
+            }else {
                 Toast.makeText(this@OtpVerification, "ENTER THE CORRECT OTP", Toast.LENGTH_SHORT)
                     .show()
             }
-                }
-                binding.textresendotp.setOnClickListener {
-                    PhoneAuthProvider.getInstance().verifyPhoneNumber(
-                        phone.toString(),
-                        2,
-                        TimeUnit.MINUTES,
-                        this@OtpVerification,
-                        object: PhoneAuthProvider.OnVerificationStateChangedCallbacks(){
-                            override fun onVerificationCompleted(
-                                phoneAuthCredential: PhoneAuthCredential
-                            ) {
-                                signInWithPhoneAuthCredential( phoneAuthCredential)
-                            }
+        }
+        binding.textresendotp.setOnClickListener {
+            PhoneAuthProvider.getInstance().verifyPhoneNumber(
+                phone.toString(),
+                2,
+                TimeUnit.MINUTES,
+                this@OtpVerification,
+                object: PhoneAuthProvider.OnVerificationStateChangedCallbacks(){
+                    override fun onVerificationCompleted(
+                        phoneAuthCredential: PhoneAuthCredential
+                    ) {
+                        signInWithPhoneAuthCredential( phoneAuthCredential)
+                    }
 
-                            override fun onVerificationFailed(
-                                e: FirebaseException
-                            ) {
-                                Toast.makeText(this@OtpVerification,e.message,Toast.LENGTH_SHORT).show()
-                            }
+                    override fun onVerificationFailed(
+                        e: FirebaseException
+                    ) {
+                        Toast.makeText(this@OtpVerification,e.message,Toast.LENGTH_SHORT).show()
+                    }
 
-                            override fun onCodeSent(
-                                p0: String,
-                                p1: PhoneAuthProvider.ForceResendingToken
-                            ) {
-                                token = p0
+                    override fun onCodeSent(
+                        p0: String,
+                        p1: PhoneAuthProvider.ForceResendingToken
+                    ) {
+                        token = p0
                         Toast.makeText(
                             this@OtpVerification,
                             "OTP sent sucessfully",
                             Toast.LENGTH_SHORT
                         ).show()
-                            }
-                        }
-                    )
-
+                    }
                 }
+            )
+
+        }
 
 
-}
+    }
     private fun numberotpmove() {
         inputnumber1!!.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
@@ -234,4 +234,4 @@ class OtpVerification : AppCompatActivity() {
             }
     }
 
-    }
+}

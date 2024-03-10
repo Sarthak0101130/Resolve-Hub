@@ -33,10 +33,9 @@ class user_home_page_activity : AppCompatActivity() {
             finish()
         }
         userad1()
-        userad2()
     }
 
-    private fun userad2() {
+    private fun userad1() {
         MobileAds.initialize(this) {}
 
         mAdView3 = findViewById(R.id.user_ad_1)
@@ -44,11 +43,4 @@ class user_home_page_activity : AppCompatActivity() {
         mAdView3.loadAd(adRequest)
     }
 
-    private fun userad1() {
-        MobileAds.initialize(this) {}
-
-        mAdView4 = findViewById(R.id.user_ad_2)
-        val adRequest = AdRequest.Builder().build()
-        mAdView4.loadAd(adRequest)
-    }
 }
