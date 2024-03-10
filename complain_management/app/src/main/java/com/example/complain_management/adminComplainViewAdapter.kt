@@ -1,8 +1,10 @@
 package com.example.complain_management
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
@@ -26,11 +28,17 @@ class AdminComplainViewAdapter(private val AdminComplainList:ArrayList<AdminComp
         val userComplain = currentAdmin.userComplain
         holder.complain_type.text = userComplain.ComplainType
         holder.complain_subject.text = userComplain.ComplainSubject
-        holder.verified.text = userComplain.verified
+        holder.verified.text = userComplain.Complainsolved
 
         val userData=currentAdmin.userData
         holder.name.text=userData.name
         holder.number.text=userData.number
+        holder.adminViewDetailedComplainButton.setOnClickListener {
+            val intent= Intent(holder.itemView.context,admin_view_user_complaint_detailed_view::class.java)
+            intent.putExtra("complainId",currentAdmin.userComplain.ComplainId)
+            intent.putExtra("userId",currentAdmin.userComplain.userId)
+            holder.itemView.context.startActivity(intent)
+        }
     }
 
     override fun getItemCount(): Int {
@@ -42,5 +50,6 @@ class AdminComplainViewAdapter(private val AdminComplainList:ArrayList<AdminComp
         val verified:TextView=itemView.findViewById(R.id.admin_view_complain_verified_text)
         val name:TextView=itemView.findViewById(R.id.admin_view_complain_name_text)
         val number:TextView=itemView.findViewById(R.id.admin_view_complain_number_text)
+        val adminViewDetailedComplainButton: Button =itemView.findViewById(R.id.admin_view_complain_view_complain_detail_button)
     }
 }

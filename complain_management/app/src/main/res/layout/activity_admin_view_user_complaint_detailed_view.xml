@@ -4,63 +4,77 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".user_complaint_detailed_view">
+    tools:context=".admin_view_user_complaint_detailed_view">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
-
         <TextView
-            android:id="@+id/user_complaint_detailed_view_type_text"
+            android:id="@+id/admin_view_user_complaint_detailed_view_name_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TextView" />
+        <TextView
+            android:id="@+id/admin_view_user_complaint_detailed_view_number_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TextView" />
+        <TextView
+            android:id="@+id/admin_view_user_complaint_detailed_view_type_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="TextView" />
 
         <TextView
-            android:id="@+id/user_complaint_detailed_view_subject_text"
+            android:id="@+id/admin_view_user_complaint_detailed_view_subject_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="TextView" />
 
         <TextView
-            android:id="@+id/user_complaint_detailed_view_description_text"
+            android:id="@+id/admin_view_user_complaint_detailed_view_description_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="TextView" />
 
         <TextView
-            android:id="@+id/user_complaint_detailed_view_complaint_registered_text"
+            android:id="@+id/admin_view_user_complaint_detailed_view_complaint_registered_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="TextView" />
 
         <TextView
-            android:id="@+id/user_complaint_detailed_view_complaint_resolved_date_text"
+            android:id="@+id/admin_view_user_complaint_detailed_view_complaint_resolved_date_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="TextView" />
 
         <ImageView
-            android:id="@+id/user_complaint_detailed_view_image_submitted_image_view"
+            android:id="@+id/admin_view_user_complaint_detailed_view_image_submitted_image_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             tools:srcCompat="@tools:sample/avatars" />
 
         <Button
-            android:id="@+id/user_complaint_detailed_view_complaint_resolved_successfully_button"
+            android:id="@+id/admin_view_user_complaint_detailed_view_complaint_resolved_successfully_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Button" />
 
         <Button
-            android:id="@+id/user_complaint_detailed_view_feedback_button"
+            android:id="@+id/admin_view_user_complaint_detailed_view_feedback_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Button" />
 
         <Button
             android:id="@+id/user_complaint_detailed_view_back_to_user_complaint_list_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Button" />
+        <Button
+            android:id="@+id/user_complaint_detailed_view_user_profile_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Button" />

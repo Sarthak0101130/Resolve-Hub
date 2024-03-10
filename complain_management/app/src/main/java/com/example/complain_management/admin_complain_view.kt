@@ -24,8 +24,9 @@ class admin_complain_view : AppCompatActivity() {
         adminRecyclerview = binding.adminComplainList
         database = FirebaseDatabase.getInstance()
         val adminId = intent.getStringExtra("userId")
-        val adminRef = database.getReference("Admin")
-        val complainUserRef = database.getReference("ComplainUser").child(adminId!!)
+        val adminRef = database.getReference("Admin").child(adminId!!)
+        val complainUserRef = database.getReference("ComplainUser")
+        val userRef=database.getReference("UserData")
         adminRecyclerview.setHasFixedSize(true);
         adminRecyclerview.layoutManager = LinearLayoutManager(this);
 
@@ -34,33 +35,62 @@ class admin_complain_view : AppCompatActivity() {
         adminRecyclerview.adapter = adminComplainViewAdapter
         adminRef.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(adminDataSnapshot: DataSnapshot) {
-                for (adminSnapshot in adminDataSnapshot.children) {
-                    val userId = adminSnapshot.key
-                    if (userId != null) {
-                        complainUserRef.child(userId)
-                            .addValueEventListener(object : ValueEventListener {
-                                override fun onDataChange(complainDataSnapshot: DataSnapshot) {
-                                    val userComplaintList = ArrayList<UserComplain>()
-                                    for (complaintSnapshot in complainDataSnapshot.children) {
-                                        val userComplain =
-                                            complaintSnapshot.getValue(UserComplain::class.java)
-                                        userComplain?.let {
-                                            userComplaintList.add(it)
-                                        }
-                                    }
-                                    adminComplainViewAdapter.notifyDataSetChanged()
-                                }
+                val adminData=adminDataSnapshot.getValue(AdminData::class.java)
+                adminArrayList.clear()
+                if(adminData?.uid != null){
+                    val userIdList=adminData.uid
 
-                                override fun onCancelled(complainDatabaseError: DatabaseError) {
-                                    Toast.makeText(
-                                        this@admin_complain_view,
-                                        "error",
-                                        Toast.LENGTH_SHORT
-                                    ).show()
-                                }
-                            })
+                    for (userId in userIdList!!) {
+                        if (userId != null) {
+                            complainUserRef.child(userId)
+                                .addValueEventListener(object : ValueEventListener {
+                                    override fun onDataChange(complainDataSnapshot: DataSnapshot) {
+                                        var i=0
+                                        for (complaintSnapshot in complainDataSnapshot.children) {
+                                            i+=1
+                                            val userComplain =
+                                                complaintSnapshot.getValue(UserComplain::class.java)
+                                            Toast.makeText(this@admin_complain_view, "userComplain=$i==$userComplain", Toast.LENGTH_SHORT).show()
+                                            userRef.child(userId)
+                                                .addListenerForSingleValueEvent(object:ValueEventListener{
+                                                    override fun onDataChange(userDataSnapshot: DataSnapshot) {
+                                                        val userData = userDataSnapshot.getValue(UserData::class.java)
+                                                        val adminComplain = AdminComplain(
+                                                            userComplain = userComplain ?: UserComplain(),
+                                                            userData = userData ?: UserData()
+                                                        )
+                                                        userComplain?.let {
+                                                            adminArrayList.add(adminComplain)
+                                                        }
+
+                                                        adminComplainViewAdapter.notifyDataSetChanged()
+                                                    }
+
+                                                    override fun onCancelled(error: DatabaseError) {
+                                                        TODO("Not yet implemented")
+                                                    }
+                                                })
+
+                                        }
+
+
+                                    }
+
+                                    override fun onCancelled(complainDatabaseError: DatabaseError) {
+                                        Toast.makeText(
+                                            this@admin_complain_view,
+                                            "error",
+                                            Toast.LENGTH_SHORT
+                                        ).show()
+                                    }
+                                })
+
+                        }
+
+
                     }
                 }
+
 
             }
 

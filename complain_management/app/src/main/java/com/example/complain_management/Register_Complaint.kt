@@ -15,19 +15,27 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.example.complain_management.databinding.ActivityRegisterComplaintBinding
+import com.google.android.play.integrity.internal.i
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 import java.io.File
 import java.io.FileOutputStream
 import java.io.IOException
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
+import com.google.firebase.storage.FirebaseStorage
+import com.google.firebase.storage.StorageReference
+import java.util.UUID
 
 
 class Register_Complaint : AppCompatActivity() {
     private lateinit var binding: ActivityRegisterComplaintBinding
     private lateinit var database: FirebaseDatabase
-
+    private lateinit var storage: FirebaseStorage
+    private lateinit var storageRef: StorageReference
     // Register a launcher for requesting camera permission
     private val cameraPermissionLauncher =
         registerForActivityResult(ActivityResultContracts.RequestPermission()) { isGranted ->
@@ -82,7 +90,8 @@ class Register_Complaint : AppCompatActivity() {
 
         // Initialize Firebase database
         database=FirebaseDatabase.getInstance()
-
+        storage = FirebaseStorage.getInstance()
+        storageRef = storage.reference
         // Set a click listener for the capture image button
         binding.requestComplaintScrollableContent.requestComplaintCaptureImage.setOnClickListener {
             // Check and request camera permission
@@ -159,30 +168,50 @@ class Register_Complaint : AppCompatActivity() {
 
     private fun savetodatabase(complainType:String,complainSubject:String,complainDescription:String,imageUri:Uri?,userId:String){
         Toast.makeText(this@Register_Complaint,userId.toString(),Toast.LENGTH_SHORT).show()
-        val userRef=database.reference.child("ComplainUser")
-        val compainkey=userRef.child(userId!!).push().key
+        val userComplainRef=database.reference.child("ComplainUser")
+
+        val compainkey=userComplainRef.child(userId!!).push().key
         val currentTimeMillis = System.currentTimeMillis()
 
 // Define the date format
         val dateFormat = SimpleDateFormat("dd-MM-yyyy HH:mm:ss", Locale.getDefault())
-
+    storageRef=storage.getReferenceFromUrl("gs://resolve-hub-a8de8.appspot.com")
 // Format the timestamp into a string
         val formattedDate = dateFormat.format(Date(currentTimeMillis))
-        val complainData=UserComplain(
+
+        imageUri?.let {
+            val imageRef = storageRef.child("${compainkey}.jpg")
+
+            // Upload the image to Firebase Storage
+            imageRef.putFile(imageUri)
+                .addOnSuccessListener {
+                    // Image uploaded successfully, get the download URL
+                    Toast.makeText(this, "upload Image", Toast.LENGTH_SHORT).show()
+                }
+                .addOnFailureListener{
+                    Toast.makeText(this, "Failed to upload Image", Toast.LENGTH_SHORT).show()
+                }
+
+        }
+
+
+                    val complainData=UserComplain(
             ComplainId = compainkey,
             userId=userId,
             ComplainType = complainType,
             ComplainSubject = complainSubject,
             ComplainDescription = complainDescription,
-            image = imageUri.toString(),
             complain_time = formattedDate,
+            Complainsolved = "No",
 
         )
 
 
         if(compainkey!=null){
-            userRef.child(userId).child(compainkey).setValue(complainData)
+            userComplainRef.child(userId).child(compainkey).setValue(complainData)
                 .addOnCompleteListener {
+                    updateComplainsPending(userId)
+
                 Toast.makeText(this@Register_Complaint, "Registered Successfully", Toast.LENGTH_SHORT).show()
                 val intent=Intent(this@Register_Complaint,user_home_page_activity::class.java)
                 intent.putExtra("userId",userId)
@@ -195,7 +224,32 @@ class Register_Complaint : AppCompatActivity() {
         }
 
     }
-    private fun saveImageToGallery(bitmap: Bitmap): Uri? {
+    private fun updateComplainsPending(userId:String){
+        val userRef=database.reference.child("UserData").child(userId)
+        userRef.child("ComplainsPending").addListenerForSingleValueEvent(object: ValueEventListener{
+            override fun onDataChange(snapshot: DataSnapshot) {
+                val currentPendingCount = (snapshot.value as? Long) ?: 0
+                val newPendingCount = currentPendingCount + 1
+
+                val updates = mapOf<String, Any>(
+                    "ComplainsPending" to newPendingCount
+                        )
+
+                userRef.updateChildren(updates)
+                    .addOnCompleteListener {
+                        Toast.makeText(this@Register_Complaint,it.toString(),Toast.LENGTH_SHORT).show()
+                    }
+                    .addOnFailureListener {
+                        Toast.makeText(this@Register_Complaint,it.message,Toast.LENGTH_SHORT).show()
+                    }
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                Toast.makeText(this@Register_Complaint,error.toString(),Toast.LENGTH_SHORT).show()
+            }
+        })
+    }
+            private fun saveImageToGallery(bitmap: Bitmap): Uri? {
         // Implement the logic to save the Bitmap to a file and return the file's Uri
         // This is a sample implementation, you might need to handle file operations properly
         // For simplicity, you can use getExternalFilesDir or create a file in the app's cache directory

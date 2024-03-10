@@ -28,7 +28,7 @@ class UserComplainViewAdapter(private val userList:ArrayList<UserComplain>) :
 
         holder.complain_type.text=currentitem.ComplainType
         holder.complain_subject.text=currentitem.ComplainSubject
-        holder.verified.text=currentitem.verified
+        holder.verified.text=currentitem.Complainsolved
         holder.userViewDetailedComplaintButton.setOnClickListener{
             val intent= Intent(holder.itemView.context,user_complaint_detailed_view::class.java)
             intent.putExtra("complainId",currentitem.ComplainId)

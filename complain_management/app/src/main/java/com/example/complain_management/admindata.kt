@@ -18,7 +18,9 @@ data class UserData(
     var flatNo:String?=null,
     var buildingNo:String?=null,
     var buildingName:String?=null,
-    val adminId:String?=null,
+    var adminId:String?=null,
+    var ComplainsPending:Long?=null,
+    var complainResolved:Long?=null,
 
 )
 
@@ -38,9 +40,9 @@ data class UserComplain(
     var ComplainSubject: String?=null,
     var ComplainDescription: String?=null,
     var image:String?=null,
-    var verified:String?="No",
+    var Complainsolved:String?=null,
     var complain_time:String?=null,
-    var completed_solved_time:String?="Problem Not Solved",
+    var completed_solved_time:String?=null,
 )
 
 data class AdminComplain(

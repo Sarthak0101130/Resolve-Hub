@@ -101,13 +101,13 @@ class OtpVerification : AppCompatActivity() {
                                             "User"->{
                                                 val intent= Intent(this@OtpVerification,user_home_page_activity::class.java)
                                                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP)
-                                                intent.putExtra("UserId",userId)
+                                                intent.putExtra("userId",userId)
                                                 startActivity(intent)
                                             }
                                             "Admin"->{
                                                 val intent= Intent(this@OtpVerification,home_page_activity::class.java)
                                                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP)
-                                                intent.putExtra("UserId",userId)
+                                                intent.putExtra("userId",userId)
                                                 startActivity(intent)
                                             }
                                             else->{

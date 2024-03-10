@@ -14,6 +14,7 @@
         android:layout_gravity="center"
         android:layout_marginTop="6dp"
         android:orientation="vertical">
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -26,50 +27,11 @@
                 android:text="Name:" />
 
             <TextView
-                android:id="@+id/admin_view_complain_name_text"
+                android:id="@+id/admin_complaint_view_user_wise_user_name_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="25dp"
-                android:text="Sourabh" />
-
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Number:" />
-
-            <TextView
-                android:id="@+id/admin_view_complain_number_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="25dp"
-                android:text="Phone No." />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Type:" />
-
-            <TextView
-                android:id="@+id/admin_view_complain_type_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="25dp"
-                android:text="Problem Type" />
+                android:text="Name of User" />
 
         </LinearLayout>
 
@@ -82,10 +44,10 @@
             <TextView
                 android:layout_width="62dp"
                 android:layout_height="wrap_content"
-                android:text="Subject:" />
+                android:text="Phone No:" />
 
             <TextView
-                android:id="@+id/admin_view_complain_subject_text"
+                android:id="@+id/admin_complaint_view_user_wise_phone_no_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="-3dp"
@@ -100,19 +62,40 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Status:" />
+                android:text="UnSolved Complaints:" />
 
             <TextView
-                android:id="@+id/admin_view_complain_verified_text"
-                android:layout_width="54dp"
+                android:id="@+id/admin_complaint_view_user_wise_unsolved_complains_text"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="16dp"
-                android:text="Solved" />
+                android:text="No of unsolved complains" />
         </LinearLayout>
-        <Button
-            android:id="@+id/admin_view_complain_view_complain_detail_button"
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Solved Complaints:" />
+
+            <TextView
+                android:id="@+id/admin_complaint_view_user_wise_solved_complains_text"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="16dp"
+                android:text="No of solved complains" />
+        </LinearLayout>
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/user_compliant_view_detailed_complaint"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"></Button>
+            android:layout_height="match_parent"
+            android:textColor="@color/black"
+            android:background="@color/yellow">
+
+        </androidx.appcompat.widget.AppCompatButton>
 
     </LinearLayout>
 </androidx.cardview.widget.CardView>
