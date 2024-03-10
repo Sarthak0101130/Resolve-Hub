@@ -5,7 +5,7 @@ data class AdminData(
     var name:String?= null,
     var number:String?= null,
     var organizationname:String?= null,
-    var uid:List<String?>? = null,//This includes the list of user id under a admin
+    var uid: List<String?>? = null ,//This includes the list of user id under a admin
     var admin_services: List<String?>? = null,
 )
 

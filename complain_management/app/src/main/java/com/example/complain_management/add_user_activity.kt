@@ -30,6 +30,11 @@ class add_user_activity : AppCompatActivity() {
         val userId = intent.getStringExtra("userId")
         database = FirebaseDatabase.getInstance()
         auth = FirebaseAuth.getInstance()
+        Toast.makeText(
+            this@add_user_activity,
+            userId.toString(),
+            Toast.LENGTH_SHORT
+        ).show()
         binding.scrollableContent.newUser.setOnClickListener {
             val name = binding.scrollableContent.enterName.text.toString()
             val age = binding.scrollableContent.enterAge.text.toString()
@@ -38,6 +43,7 @@ class add_user_activity : AppCompatActivity() {
             val flat_no = binding.scrollableContent.enterFlatNo.text.toString()
             val building_no = binding.scrollableContent.enterBuildingNo.text.toString()
             val building_name = binding.scrollableContent.enterBuildingName.text.toString()
+
             if (name.isEmpty() || age.isEmpty() || email.isEmpty() || number.isEmpty() || flat_no.isEmpty() || building_no.isEmpty() || building_name.isEmpty()) {
                 if (name.isEmpty()) {
                     Toast.makeText(this, "Name Required", Toast.LENGTH_SHORT).show()
@@ -93,6 +99,7 @@ class add_user_activity : AppCompatActivity() {
                                 override fun onDataChange(snapshot: DataSnapshot) {
                                     val updatedUsers: MutableList<String> = mutableListOf()
                                     // Add existing users from admin data (if available)
+
                                     if (snapshot.exists() && snapshot.child("uid").exists()) {
                                         val existingUsers =
                                             snapshot.child("uid").children.map { it.getValue(String::class.java)!! }
@@ -147,5 +154,6 @@ class add_user_activity : AppCompatActivity() {
     }
 
 }
+
 
 

@@ -124,7 +124,7 @@ class user_complaint_detailed_view : AppCompatActivity() {
                         val solved="Yes"
 
                         val updates=HashMap<String,Any>()
-                        updates["Complainsolved"]=solved
+                        updates["complainsolved"]=solved
                         updates["completed_solved_time"]=formattedDate
                         complaintUserRef.updateChildren(updates)
                             .addOnCompleteListener {

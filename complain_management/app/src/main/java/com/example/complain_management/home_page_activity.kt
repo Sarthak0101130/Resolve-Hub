@@ -3,6 +3,7 @@ package com.example.complain_management
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import com.example.complain_management.databinding.HomePageBinding
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.AdView
@@ -18,7 +19,7 @@ class home_page_activity : AppCompatActivity() {
         setContentView(binding.root)
         val userId = intent.getStringExtra("userId")
 
-
+        Toast.makeText(this@home_page_activity,userId.toString(),Toast.LENGTH_SHORT).show()
         binding.rectangle8Ek2.setOnClickListener{
             val intent= Intent(this,edit_user_activity::class.java)
             intent.putExtra("userId",userId)
