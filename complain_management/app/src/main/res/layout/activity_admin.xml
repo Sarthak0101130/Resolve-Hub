@@ -4,36 +4,43 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/admin"
+    android:background="#f8eeec"
     tools:context=".Admin">
 
 
+    <ImageView
+        android:layout_width="415dp"
+        android:layout_height="244dp"
+        android:background="@drawable/top_background2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"></ImageView>
+
     <TextView
         android:id="@+id/adminwelcome"
-        android:layout_width="247dp"
-        android:layout_height="54dp"
-        android:text="Welcome Admin,
-        Sign Up !"
-        android:textColor="@color/black"
-        android:textSize="22dp"
+        android:layout_width="299dp"
+        android:layout_height="109dp"
+        android:text="Welcome Admin,\nSign Up !"
+        android:textColor="@color/_bg__edit_services_ek2_color"
+        android:textSize="34dp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/namelayout"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.743"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.377" />
+        app:layout_constraintVertical_bias="0.053" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/namelayout"
         android:layout_width="350dp"
         android:layout_height="60dp"
         android:layout_marginHorizontal="16dp"
-        android:layout_marginTop="152dp"
-        app:boxStrokeColor="@color/yellow"
-        app:hintTextColor="@color/yellow"
+        android:layout_marginTop="216dp"
+        android:textColorHint="@color/black"
+        app:boxStrokeColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintHorizontal_bias="0.508"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -42,6 +49,9 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:hint="@string/enter_your_name"
+            android:drawableStart="@drawable/name"
+            android:padding="8dp"
+            android:drawablePadding="10dp"
             android:inputType="textPersonName"
             android:textColor="@color/black" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -51,9 +61,8 @@
         android:layout_width="350dp"
         android:layout_height="60dp"
         android:layout_marginHorizontal="16dp"
-        android:layout_marginTop="228dp"
-        app:boxStrokeColor="@color/yellow"
-        app:hintTextColor="@color/yellow"
+        android:layout_marginTop="288dp"
+        android:textColorHint="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.508"
         app:layout_constraintStart_toStartOf="parent"
@@ -63,7 +72,10 @@
             android:id="@+id/organisationname"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:drawableStart="@drawable/name"
             android:hint="Enter Organisation name"
+            android:drawablePadding="10dp"
+            android:padding="8dp"
             android:inputType="textPersonName"
             android:textColor="@color/black" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -72,12 +84,13 @@
         android:id="@+id/phonelayout"
         android:layout_width="350dp"
         android:layout_height="60dp"
+
         android:layout_marginHorizontal="16dp"
-        android:layout_marginTop="300dp"
-        app:boxStrokeColor="@color/yellow"
-        app:hintTextColor="@color/yellow"
+        android:layout_marginTop="360dp"
+        android:textColorHint="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
+
+        app:layout_constraintHorizontal_bias="0.508"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -85,6 +98,9 @@
             android:id="@+id/phone"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:drawablePadding="10dp"
+            android:drawableStart="@drawable/email"
+            android:padding="8dp"
             android:hint="@string/enter_phone_number"
             android:inputType="phone"
             android:textColor="@color/black" />
@@ -95,11 +111,10 @@
         android:layout_width="350dp"
         android:layout_height="60dp"
         android:layout_marginHorizontal="16dp"
-        android:layout_marginTop="376dp"
-        app:boxStrokeColor="@color/yellow"
-        app:hintTextColor="@color/yellow"
+        android:layout_marginTop="432dp"
+        android:textColorHint="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintHorizontal_bias="0.508"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -109,6 +124,9 @@
             android:layout_height="match_parent"
             android:hint="Type your Email"
             android:inputType="textEmailAddress"
+            android:drawableStart="@drawable/email"
+            android:drawablePadding="10dp"
+            android:padding="8dp"
             android:textColor="@color/black" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -117,11 +135,11 @@
         android:layout_width="350dp"
         android:layout_height="60dp"
         android:layout_marginHorizontal="16dp"
-        android:layout_marginTop="16dp"
-        app:boxStrokeColor="@color/yellow"
-        app:hintTextColor="@color/yellow"
+        android:layout_marginTop="12dp"
+
+        android:textColorHint="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.508"
+        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/emailLayout"
         app:passwordToggleEnabled="true"
@@ -130,6 +148,9 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/adminpass"
             android:layout_width="match_parent"
+            android:drawableStart="@drawable/password"
+            android:drawablePadding="10dp"
+            android:padding="8dp"
             android:layout_height="match_parent"
             android:hint="Type Your Password"
             android:inputType="textPassword"
@@ -142,10 +163,9 @@
         android:layout_height="60dp"
         android:layout_marginHorizontal="16dp"
         android:layout_marginTop="12dp"
-        app:boxStrokeColor="@color/yellow"
-        app:hintTextColor="@color/yellow"
+        android:textColorHint="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.508"
+        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/passwordLayout"
         app:passwordToggleEnabled="true"
@@ -154,6 +174,9 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/adminconfirmPass"
             android:layout_width="match_parent"
+            android:drawableStart="@drawable/password"
+            android:drawablePadding="10dp"
+            android:padding="8dp"
             android:layout_height="match_parent"
             android:hint="Retype Your Password"
             android:inputType="textPassword"
@@ -162,33 +185,17 @@
 
     <ImageButton
         android:id="@+id/servicebutton"
-        android:layout_width="273dp"
-        android:layout_height="52dp"
-        android:background="@color/add_user_top_bar_box_color"
+        android:layout_width="73dp"
+        android:layout_height="71dp"
+        android:background="@drawable/btn_arrow2"
         android:contentDescription="Description of the button"
         android:elevation="@dimen/cardview_compat_inset_shadow"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.906"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/confirmPasswordLayout" />
-
-    <TextView
-        android:id="@+id/service_btn_text"
-        android:layout_width="127dp"
-        android:layout_height="39dp"
-        android:elevation="@dimen/cardview_default_elevation"
-        android:fontFamily="sans-serif"
-        android:gravity="center"
-        android:text="Next"
-        android:textColor="#373535"
-        android:textSize="25dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/servicebutton"
-        app:layout_constraintEnd_toEndOf="@+id/servicebutton"
-        app:layout_constraintHorizontal_bias="0.493"
-        app:layout_constraintStart_toStartOf="@+id/servicebutton"
-        app:layout_constraintTop_toTopOf="@+id/servicebutton"
-        app:layout_constraintVertical_bias="0.52" />
+        app:layout_constraintTop_toBottomOf="@+id/confirmPasswordLayout"
+        app:layout_constraintVertical_bias="0.428" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

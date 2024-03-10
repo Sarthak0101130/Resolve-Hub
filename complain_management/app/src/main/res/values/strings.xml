@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">LoginAndSignUp</string>
+    <string name="app_name">Resolve Hub</string>
     <string name="enter_your_name">Enter your Name</string>
     <string name="enter_apartment_name">Enter Apartment Name</string>
     <string name="enter_phone_number">Enter Phone Number</string>
@@ -12,7 +12,7 @@
     <string name="title_notifications">Notifications</string>
     <string name="sign_in_and_move_to_homepage">SIGN IN AND MOVE TO HOMEPAGE</string>
     <string name="ek_img_content">ExportKit Image</string>
-    <string name="billing_and_more_string">Billing  and More</string>
+    <string name="billing_and_more_string">Billing  and More...</string>
     <string name="complaint_history_string">Complaint History</string>
     <string name="edit_staff_string">Edit Staff</string>
     <string name="edit_organization_string">Edit Organization</string>
@@ -77,6 +77,9 @@
     <string name="we_will_send_you_a_one_time_otp_to_the_given_mobile_number">We will send you a one time OTP to the given mobile number</string>
     <string name="otp_verification">OTP VERIFICATION</string>
     <string name="title_activity_dashboard">dashboard</string>
+    <string name="signin_button">signIn Button</string>
+    <string name="hello">Hello</string>
+    <string name="notification">Notification</string>
 
 
 </resources>

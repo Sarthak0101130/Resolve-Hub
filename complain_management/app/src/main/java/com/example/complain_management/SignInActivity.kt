@@ -29,7 +29,7 @@ class SignInActivity : AppCompatActivity() {
         binding = ActivitySignInBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.textView.setOnClickListener {
+        binding.signInAdminButton.setOnClickListener {
             val intent = Intent(this@SignInActivity, Admin::class.java)
             startActivity(intent)
             finish()
@@ -38,9 +38,9 @@ class SignInActivity : AppCompatActivity() {
 
 
 
-            binding.button.setOnClickListener {
-                val email = binding.emailEt.text.toString()
-                val pass = binding.passET.text.toString()
+            binding.signInButton.setOnClickListener {
+                val email = binding.signInEmailText.text.toString()
+                val pass = binding.signInPasswordText.text.toString()
 
                 if (email.isNotEmpty() && pass.isNotEmpty()) {
 

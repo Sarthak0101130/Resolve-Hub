@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:backgroundTint="#EA6d35"
     tools:context=".home_page_activity">
 
     <include
@@ -19,25 +19,12 @@
     <include
         android:id="@+id/scrollable_content"
         layout="@layout/add_user_scrollable_view"
-        android:layout_width="404dp"
-        android:layout_height="600dp"
+        android:layout_width="391dp"
+        android:layout_height="599dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/top_constant_view"
-        app:layout_constraintVertical_bias="0.37" />
-
-    <include
-        android:id="@+id/bottom_constant_view"
-        layout="@layout/activity_botton_constant"
-        android:layout_width="383dp"
-        android:layout_height="60dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.428"
-        app:layout_constraintStart_toStartOf="@id/scrollable_content"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toTopOf="@+id/top_constant_view" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

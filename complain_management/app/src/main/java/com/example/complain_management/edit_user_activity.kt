@@ -20,9 +20,9 @@ class edit_user_activity : AppCompatActivity() {
         binding.editUserAddUserBox.setOnClickListener(object: View.OnClickListener{
             override fun onClick(v: View){
             val intent= Intent(this@edit_user_activity,add_user_activity::class.java)
-                intent.putExtra("userId",userId)
                 startActivity(intent)
                 finish()
+
             }
         })
     }

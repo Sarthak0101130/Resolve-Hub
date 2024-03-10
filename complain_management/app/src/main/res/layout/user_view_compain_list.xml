@@ -9,8 +9,8 @@
     <!-- Linear Layout above Button -->
     <LinearLayout
         android:id="@+id/button_text"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="365dp"
+        android:layout_height="117dp"
         android:layout_gravity="center"
         android:layout_marginTop="6dp"
         android:orientation="vertical">
@@ -71,14 +71,21 @@
                 android:layout_marginLeft="16dp"
                 android:text="Solved" />
         </LinearLayout>
+
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/user_compliant_view_detailed_complaint"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="271dp"
+            android:layout_marginStart="40dp"
+            android:layout_height="wrap_content"
+            android:background="@color/yellow"
+            android:contentDescription="NULL"
+            android:hint="Detailed View"
             android:textColor="@color/black"
-            android:background="@color/yellow">
+            android:textColorHint="@color/white"
+            android:textStyle="bold">
 
         </androidx.appcompat.widget.AppCompatButton>
+
 
     </LinearLayout>
 </androidx.cardview.widget.CardView>
