@@ -318,7 +318,6 @@
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="@+id/user_home_page_society_guidelines_box"
                 app:layout_constraintEnd_toEndOf="@+id/user_home_page_society_guidelines_box"
-                app:layout_constraintHorizontal_bias="0.678"
                 app:layout_constraintStart_toStartOf="@+id/user_home_page_society_guidelines_box"
                 app:layout_constraintTop_toTopOf="@+id/user_home_page_society_guidelines_box" />
 
