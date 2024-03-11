@@ -67,16 +67,5 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Button" />
-
-        <Button
-            android:id="@+id/user_complaint_detailed_view_back_to_user_complaint_list_button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Button" />
-        <Button
-            android:id="@+id/user_complaint_detailed_view_user_profile_button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Button" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

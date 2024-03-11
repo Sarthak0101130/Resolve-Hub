@@ -89,7 +89,7 @@
                 android:text="No of solved complains" />
         </LinearLayout>
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/user_compliant_view_detailed_complaint"
+            android:id="@+id/admin_complain_view_view_user_all_complaint_button"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:textColor="@color/black"
