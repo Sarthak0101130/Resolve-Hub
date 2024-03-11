@@ -282,11 +282,11 @@
 
             <TextView
                 android:id="@+id/user_home_page_important_helpline_numbers"
-                android:layout_width="290dp"
+                android:layout_width="wrap_content"
                 android:layout_height="35dp"
                 android:text="@string/user_home_page_important_helpline_numbers_string"
                 android:textColor="@color/white"
-                android:textSize="22sp"
+                android:textSize="19dp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="@+id/user_home_page_important_helpline_numbers_box"
                 app:layout_constraintEnd_toEndOf="@+id/user_home_page_important_helpline_numbers_box"
@@ -320,39 +320,6 @@
                 app:layout_constraintEnd_toEndOf="@+id/user_home_page_society_guidelines_box"
                 app:layout_constraintStart_toStartOf="@+id/user_home_page_society_guidelines_box"
                 app:layout_constraintTop_toTopOf="@+id/user_home_page_society_guidelines_box" />
-
-            <ImageButton
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:layout_marginBottom="4dp"
-                android:background="@drawable/magnifying_glass"
-                android:contentDescription="Null"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.498"
-                app:layout_constraintStart_toStartOf="parent" />
-
-            <ImageButton
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:layout_marginBottom="4dp"
-                android:background="@drawable/setting"
-                android:contentDescription="Null"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.846"
-                app:layout_constraintStart_toStartOf="parent" />
-
-            <ImageButton
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:layout_marginBottom="4dp"
-                android:background="@drawable/home"
-                android:contentDescription="Null"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.135"
-                app:layout_constraintStart_toStartOf="parent" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

@@ -88,8 +88,6 @@ class admin_view_user_complaint_detailed_view : AppCompatActivity() {
         image=binding.adminViewUserComplaintDetailedViewImageSubmittedImageView
         val complainSolvedSubmitButton=binding.adminViewUserComplaintDetailedViewComplaintResolvedSuccessfullyButton
         val seeFeedbackButton=binding.adminViewUserComplaintDetailedViewFeedbackButton
-        val previousPageButton=binding.userComplaintDetailedViewBackToUserComplaintListButton
-        val viewUserProfile=binding.userComplaintDetailedViewUserProfileButton
         checkAndRequestCameraPermission()
         complainSolvedSubmitButton.visibility= View.GONE
         complaintUserRef.addValueEventListener(object:ValueEventListener{
