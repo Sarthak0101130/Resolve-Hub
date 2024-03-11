@@ -88,8 +88,6 @@ class admin_view_user_complaint_detailed_view : AppCompatActivity() {
         image=binding.adminViewUserComplaintDetailedViewImageSubmittedImageView
         val complainSolvedSubmitButton=binding.adminViewUserComplaintDetailedViewComplaintResolvedSuccessfullyButton
         val seeFeedbackButton=binding.adminViewUserComplaintDetailedViewFeedbackButton
-        val previousPageButton=binding.userComplaintDetailedViewBackToUserComplaintListButton
-        val viewUserProfile=binding.userComplaintDetailedViewUserProfileButton
         checkAndRequestCameraPermission()
         complainSolvedSubmitButton.visibility= View.GONE
         complaintUserRef.addValueEventListener(object:ValueEventListener{
@@ -158,9 +156,9 @@ class admin_view_user_complaint_detailed_view : AppCompatActivity() {
                                 updatesUser["ComplainsPending"] = newPendingCount
                                 updatesUser["complainResolved"]=newCompletedCount
 
-                                userRef.updateChildren(updates)
+                                userRef.updateChildren(updatesUser)
                                     .addOnCompleteListener {
-                                        Toast.makeText(this@admin_view_user_complaint_detailed_view,it.toString(),Toast.LENGTH_SHORT).show()
+                                        Toast.makeText(this@admin_view_user_complaint_detailed_view,"$newCompletedCount  $newPendingCount",Toast.LENGTH_SHORT).show()
 
                                     }
                                     .addOnFailureListener {
