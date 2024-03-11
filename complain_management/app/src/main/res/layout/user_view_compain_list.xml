@@ -10,10 +10,12 @@
     <!-- Linear Layout above Button -->
     <LinearLayout
         android:id="@+id/button_text"
-        android:layout_width="366dp"
+        android:layout_width="367dp"
         android:layout_height="127dp"
         android:layout_gravity="center"
+        android:layout_marginStart="5dp"
         android:layout_marginTop="6dp"
+        android:layout_marginEnd="5dp"
         android:background="@color/white"
         android:orientation="vertical">
 
@@ -25,20 +27,20 @@
 
             <TextView
                 android:layout_width="wrap_content"
-                android:textStyle="bold"
-                android:layout_marginStart="8dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
                 android:text="Type:"
-                android:textColor="#EA6d35" />
+                android:textColor="#EA6d35"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/user_complain_view_type_text"
                 android:layout_width="107dp"
-                android:textStyle="bold"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="25dp"
                 android:text="Problem Type"
-                android:textColor="@color/black" />
+                android:textColor="@color/black"
+                android:textStyle="bold" />
 
         </LinearLayout>
 
@@ -53,17 +55,17 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:text="Subject:"
-                android:textStyle="bold"
-                android:textColor="#EA6d35" />
+                android:textColor="#EA6d35"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/user_complain_view_subject_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textStyle="bold"
                 android:layout_marginLeft="-3dp"
                 android:text="Problem"
-                android:textColor="@color/black" />
+                android:textColor="@color/black"
+                android:textStyle="bold" />
         </LinearLayout>
 
         <LinearLayout
@@ -75,9 +77,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:textStyle="bold"
                 android:text="Status:"
-                android:textColor="#EA6d35" />
+                android:textColor="#EA6d35"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/user_complain_view_verified_text"
@@ -85,8 +87,8 @@
                 android:layout_height="match_parent"
                 android:layout_marginLeft="16dp"
                 android:text="Solved"
-                android:textStyle="bold"
-                android:textColor="@color/black" />
+                android:textColor="@color/black"
+                android:textStyle="bold" />
         </LinearLayout>
 
         <androidx.appcompat.widget.AppCompatButton

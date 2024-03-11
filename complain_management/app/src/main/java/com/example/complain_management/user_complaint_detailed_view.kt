@@ -87,8 +87,6 @@ class user_complaint_detailed_view : AppCompatActivity() {
         val complaintSolvedTime=binding.userComplaintDetailedViewComplaintResolvedDateText
         image=binding.userComplaintDetailedViewImageSubmittedImageView
         val complaintSolvedSubmitButton=binding.userComplaintDetailedViewComplaintResolvedSuccessfullyButton
-        val feedbackButton=binding.userComplaintDetailedViewFeedbackButton
-        val previousPageButton=binding.userComplaintDetailedViewBackToUserComplaintListButton
         checkAndRequestCameraPermission()
         complaintUserRef.addValueEventListener(object:ValueEventListener{
             override fun onDataChange(snapshot: DataSnapshot) {
