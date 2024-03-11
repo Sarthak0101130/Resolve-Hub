@@ -1,5 +1,6 @@
 package com.example.complain_management
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -33,6 +34,12 @@ class admin_complain_view : AppCompatActivity() {
         adminArrayList = ArrayList()
         adminComplainViewAdapter = AdminComplainViewAdapter(adminArrayList)
         adminRecyclerview.adapter = adminComplainViewAdapter
+        binding.adminComplaintViewViewComplainListUserWiseButton.setOnClickListener {
+            val intent= Intent(this@admin_complain_view,admin_view_complaint_user_wise::class.java)
+            intent.putExtra("adminId",adminId)
+            startActivity(intent)
+            finish()
+        }
         adminRef.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(adminDataSnapshot: DataSnapshot) {
                 val adminData=adminDataSnapshot.getValue(AdminData::class.java)

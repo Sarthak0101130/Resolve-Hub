@@ -24,6 +24,9 @@
         android:theme="@style/Theme.Complain_management"
         tools:targetApi="31">
         <activity
+            android:name=".admin_view_complaint_user_wise"
+            android:exported="false" />
+        <activity
             android:name=".admin_view_user_complaint_detailed_view"
             android:exported="false" />
         <activity
@@ -44,7 +47,8 @@
         <activity
             android:name=".add_user_activity"
             android:exported="false" />
-        <activity android:name=".edit_user_activity"
+        <activity
+            android:name=".edit_user_activity"
             android:exported="false" />
         <activity
             android:name=".edit_services_activity"

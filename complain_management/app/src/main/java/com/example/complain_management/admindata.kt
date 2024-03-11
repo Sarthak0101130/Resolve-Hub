@@ -10,6 +10,7 @@ data class AdminData(
 )
 
 data class UserData(
+    var userId: String?=null,
     var email:String?= null,
     var name:String?= null,
     var number:String?= null,

@@ -71,6 +71,7 @@ class add_user_activity : AppCompatActivity() {
                     if (it.isSuccessful) {
                         if (number.isNotEmpty() && number.length == 10) {
                             val userData = UserData(
+                                userId=auth.currentUser!!.uid,
                                 name = name,
                                 age = age,
                                 email = email,
