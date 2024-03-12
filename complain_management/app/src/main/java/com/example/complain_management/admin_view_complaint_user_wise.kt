@@ -3,6 +3,7 @@ package com.example.complain_management
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.complain_management.databinding.ActivityAdminViewComplaintUserWiseBinding
@@ -24,6 +25,7 @@ class admin_view_complaint_user_wise : AppCompatActivity() {
         userRecyclerview=binding.adminViewComplaintUserWiseList
         database= FirebaseDatabase.getInstance()
         val userId=intent.getStringExtra("userId")
+        Toast.makeText(this@admin_view_complaint_user_wise,userId.toString(),Toast.LENGTH_SHORT).show()
         userRecyclerview.setHasFixedSize(true);
         userRecyclerview.layoutManager= LinearLayoutManager(this);
         val adminRef=database.getReference("Admin").child(userId!!)

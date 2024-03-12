@@ -30,13 +30,13 @@ class admin_complain_view : AppCompatActivity() {
         val userRef=database.getReference("UserData")
         adminRecyclerview.setHasFixedSize(true);
         adminRecyclerview.layoutManager = LinearLayoutManager(this);
-
+        Toast.makeText(this@admin_complain_view,userId.toString(),Toast.LENGTH_SHORT).show()
         adminArrayList = ArrayList()
         adminComplainViewAdapter = AdminComplainViewAdapter(adminArrayList)
         adminRecyclerview.adapter = adminComplainViewAdapter
         binding.adminComplaintViewViewComplainListUserWiseButton.setOnClickListener {
             val intent= Intent(this@admin_complain_view,admin_view_complaint_user_wise::class.java)
-            intent.putExtra("adminId",userId)
+            intent.putExtra("userId",userId)
             startActivity(intent)
             finish()
         }
