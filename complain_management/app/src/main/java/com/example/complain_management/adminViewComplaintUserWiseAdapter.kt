@@ -29,6 +29,9 @@ class AdminViewComplaintUserWiseAdapter(private val userList:ArrayList<UserData>
         holder.phoneNo.text=currentitem.number
         holder.unSolvedComplaint.text= currentitem.ComplainsPending.toString()
         holder.solvedComplaint.text=currentitem.complainResolved.toString()
+        holder.flatNo.text=currentitem.flatNo
+        holder.buildingNo.text=currentitem.buildingNo
+        holder.buildingName.text=currentitem.buildingName
         holder.userViewAllComplains.setOnClickListener{
             val intent= Intent(holder.itemView.context,user_complaint_detailed_view::class.java)
             intent.putExtra("userId",currentitem.userId)
@@ -46,5 +49,8 @@ class AdminViewComplaintUserWiseAdapter(private val userList:ArrayList<UserData>
         val unSolvedComplaint: TextView =itemView.findViewById(R.id.admin_complaint_view_user_wise_unsolved_complains_text)
         val solvedComplaint: TextView =itemView.findViewById(R.id.admin_complaint_view_user_wise_solved_complains_text)
         val userViewAllComplains: Button =itemView.findViewById(R.id.admin_complain_view_view_user_all_complaint_button)
+        val flatNo:TextView=itemView.findViewById(R.id.admin_complaint_view_user_wise_flat_no_text)
+        val buildingNo:TextView=itemView.findViewById(R.id.admin_complaint_view_user_wise_building_no_text)
+        val buildingName:TextView=itemView.findViewById(R.id.admin_complaint_view_user_wise_building_name_text)
     }
 }

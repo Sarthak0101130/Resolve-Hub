@@ -22,8 +22,12 @@ class edit_user_activity : AppCompatActivity() {
                 intent.putExtra("userId",userId)
                 startActivity(intent)
                 finish()
-
-
+        }
+        binding.editUserExistingUserBox.setOnClickListener {
+            val intent=Intent(this@edit_user_activity,existing_users::class.java)
+            intent.putExtra("userId",userId)
+            startActivity(intent)
+            finish()
         }
     }
 }

@@ -1,46 +1,42 @@
 package com.example.complain_management
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.complain_management.databinding.ActivityAdminViewComplaintUserWiseBinding
+import com.example.complain_management.databinding.ActivityExistingUsersBinding
+import com.example.complain_management.databinding.ActivityUserViewComplainBinding
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 
-class admin_view_complaint_user_wise : AppCompatActivity() {
+class existing_users : AppCompatActivity() {
     private lateinit var database: FirebaseDatabase
     private lateinit var userRecyclerview: RecyclerView
-    private lateinit var adminUserWiseArrayList:ArrayList<UserData>
-    private lateinit var binding: ActivityAdminViewComplaintUserWiseBinding
-    private lateinit var adminViewComplainUserWiseAdapter: AdminViewComplaintUserWiseAdapter
+    private lateinit var userArrayList:ArrayList<UserData>
+    private lateinit var binding: ActivityExistingUsersBinding
+    private lateinit var existingUserAdapter: ExistingUserAdapter
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityAdminViewComplaintUserWiseBinding.inflate(layoutInflater)
+        binding = ActivityExistingUsersBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        userRecyclerview=binding.adminViewComplaintUserWiseList
+        userRecyclerview=binding.existingUserUsersList
         database= FirebaseDatabase.getInstance()
-        val userId=intent.getStringExtra("userId")
+        val adminId=intent.getStringExtra("userId")
+        val adminRef=database.getReference("Admin").child(adminId!!)
+        val userRef=database.getReference("UserData")
         userRecyclerview.setHasFixedSize(true);
         userRecyclerview.layoutManager= LinearLayoutManager(this);
-        val adminRef=database.getReference("Admin").child(userId!!)
-        val userRef=database.getReference("UserData")
-        adminUserWiseArrayList= ArrayList()
-        adminViewComplainUserWiseAdapter= AdminViewComplaintUserWiseAdapter(adminUserWiseArrayList)
-        userRecyclerview.adapter=adminViewComplainUserWiseAdapter
-        binding.adminViewComplaintUserWiseButton.setOnClickListener {
-            val intent= Intent(this@admin_view_complaint_user_wise,admin_complain_view::class.java)
-            intent.putExtra("userId",userId)
-            startActivity(intent)
-            finish()
-        }
+
+        userArrayList= ArrayList()
+        existingUserAdapter= ExistingUserAdapter(userArrayList)
+        userRecyclerview.adapter=existingUserAdapter
         adminRef.addValueEventListener(object: ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 val adminData = dataSnapshot.getValue(AdminData::class.java)
-                adminUserWiseArrayList.clear()
+                userArrayList.clear()
                 if (adminData?.uid != null) {
                     val userIdList = adminData.uid
                     for (userId in userIdList!!) {
@@ -50,15 +46,11 @@ class admin_view_complaint_user_wise : AppCompatActivity() {
                                     override fun onDataChange(snapshot: DataSnapshot) {
                                         val userData=snapshot.getValue(UserData::class.java)
                                         userData?.let{
-                                            if(it.ComplainsPending?:0>0){
-                                                adminUserWiseArrayList.add(it)
-                                                adminUserWiseArrayList.sortByDescending { user -> user.ComplainsPending ?: 0 }
-                                                adminViewComplainUserWiseAdapter.notifyDataSetChanged()
+                                            userArrayList.add(it)
+
                                             }
-
+                                        existingUserAdapter.notifyDataSetChanged()
                                         }
-
-                                    }
 
                                     override fun onCancelled(error: DatabaseError) {
                                         TODO("Not yet implemented")
@@ -73,6 +65,8 @@ class admin_view_complaint_user_wise : AppCompatActivity() {
                 TODO("Not yet implemented")
             }
 
+
         })
+
     }
 }
