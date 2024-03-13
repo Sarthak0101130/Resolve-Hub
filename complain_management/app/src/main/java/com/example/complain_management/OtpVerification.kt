@@ -57,7 +57,8 @@ class OtpVerification : AppCompatActivity() {
                     .isEmpty() && !inputnumber5.text.toString().trim { it <= ' ' }
                     .isEmpty() && !inputnumber6.text.toString().trim { it <= ' ' }
                     .isEmpty()) {
-                val entercodeotp = inputnumber1.text.toString()+
+
+                        val entercodeotp = inputnumber1.text.toString()+
                         inputnumber2.text.toString() +
                         inputnumber3.text.toString() +
                         inputnumber4.text.toString() +
