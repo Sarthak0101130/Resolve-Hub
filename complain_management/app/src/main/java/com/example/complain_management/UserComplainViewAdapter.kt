@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
+import androidx.core.content.ContextCompat
 import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 
@@ -28,6 +29,11 @@ class UserComplainViewAdapter(private val userList:ArrayList<UserComplain>) :
 
         holder.complain_type.text=currentitem.ComplainType
         holder.complain_subject.text=currentitem.ComplainSubject
+        if(currentitem.Complainsolved=="Yes"){
+            holder.verified.setTextColor(ContextCompat.getColor(holder.itemView.context, R.color.green))
+        }else{
+            holder.verified.setTextColor(ContextCompat.getColor(holder.itemView.context, R.color.red))
+        }
         holder.verified.text=currentitem.Complainsolved
         holder.userViewDetailedComplaintButton.setOnClickListener{
             val intent= Intent(holder.itemView.context,user_complaint_detailed_view::class.java)

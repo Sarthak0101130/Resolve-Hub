@@ -29,6 +29,7 @@ class user_home_page_activity : AppCompatActivity() {
         binding.userHomePageViewComplaintsBox.setOnClickListener {
             val intent=Intent(this@user_home_page_activity,User_View_Complain::class.java)
             intent.putExtra("userId",userId)
+            intent.putExtra("Type","totalComplains")
             startActivity(intent)
             finish()
         }

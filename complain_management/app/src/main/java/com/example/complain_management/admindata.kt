@@ -14,14 +14,13 @@ data class UserData(
     var email:String?= null,
     var name:String?= null,
     var number:String?= null,
-    var organizationname:String?= null,
     var age:String?=null,
     var flatNo:String?=null,
     var buildingNo:String?=null,
     var buildingName:String?=null,
     var adminId:String?=null,
-    var ComplainsPending:Long?=null,
-    var complainResolved:Long?=null,
+    var ComplainsPending:Long?=0,
+    var complainResolved:Long?=0,
 
 )
 

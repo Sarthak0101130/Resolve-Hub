@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 
 class AdminComplainViewAdapter(private val AdminComplainList:ArrayList<AdminComplain>) :
@@ -28,6 +29,11 @@ class AdminComplainViewAdapter(private val AdminComplainList:ArrayList<AdminComp
         val userComplain = currentAdmin.userComplain
         holder.complain_type.text = userComplain.ComplainType
         holder.complain_subject.text = userComplain.ComplainSubject
+        if(userComplain.Complainsolved=="Yes"){
+            holder.verified.setTextColor(ContextCompat.getColor(holder.itemView.context, R.color.green))
+        }else{
+            holder.verified.setTextColor(ContextCompat.getColor(holder.itemView.context, R.color.red))
+        }
         holder.verified.text = userComplain.Complainsolved
 
         val userData=currentAdmin.userData

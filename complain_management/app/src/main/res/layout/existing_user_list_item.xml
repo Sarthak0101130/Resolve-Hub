@@ -27,7 +27,7 @@
                 android:text="Name:" />
 
             <TextView
-                android:id="@+id/admin_complaint_view_user_wise_user_name_text"
+                android:id="@+id/existing_user_list_item_name_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="25dp"
@@ -47,11 +47,11 @@
                 android:text="Phone No:" />
 
             <TextView
-                android:id="@+id/admin_complaint_view_user_wise_phone_no_text"
+                android:id="@+id/existing_user_list_item_phone_no_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="-3dp"
-                android:text="Problem" />
+                android:text="Phone No." />
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
@@ -65,11 +65,11 @@
                 android:text="Address:" />
 
             <TextView
-                android:id="@+id/admin_complaint_view_user_wise_flat_no_text"
+                android:id="@+id/existing_user_list_item_flat_no_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="0dp"
-                android:layout_marginRight="3dp"
+                android:layout_marginRight="6dp"
                 android:text="flat No." />
             <TextView
                 android:layout_width="2dp"
@@ -77,7 +77,7 @@
                 android:layout_marginRight="4dp"
                 android:text="," />
             <TextView
-                android:id="@+id/admin_complaint_view_user_wise_building_no_text"
+                android:id="@+id/existing_user_list_item_building_no_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="0dp"
@@ -89,50 +89,15 @@
                 android:layout_marginRight="4dp"
                 android:text="," />
             <TextView
-                android:id="@+id/admin_complaint_view_user_wise_building_name_text"
+                android:id="@+id/existing_user_list_item_building_name_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="0dp"
                 android:layout_marginRight="3dp"
                 android:text="Building Name" />
         </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="UnSolved Complaints:" />
-
-            <TextView
-                android:id="@+id/admin_complaint_view_user_wise_unsolved_complains_text"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="16dp"
-                android:text="No of unsolved complains" />
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Solved Complaints:" />
-
-            <TextView
-                android:id="@+id/admin_complaint_view_user_wise_solved_complains_text"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="16dp"
-                android:text="No of solved complains" />
-        </LinearLayout>
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/admin_complain_view_view_user_all_complaint_button"
+            android:id="@+id/existing_user_list_item_view_user_button"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:textColor="@color/black"

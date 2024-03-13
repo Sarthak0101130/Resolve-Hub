@@ -24,19 +24,19 @@ class admin_complain_view : AppCompatActivity() {
         setContentView(binding.root)
         adminRecyclerview = binding.adminComplainList
         database = FirebaseDatabase.getInstance()
-        val adminId = intent.getStringExtra("userId")
-        val adminRef = database.getReference("Admin").child(adminId!!)
+        val userId = intent.getStringExtra("userId")
+        val adminRef = database.getReference("Admin").child(userId!!)
         val complainUserRef = database.getReference("ComplainUser")
         val userRef=database.getReference("UserData")
         adminRecyclerview.setHasFixedSize(true);
         adminRecyclerview.layoutManager = LinearLayoutManager(this);
-
+        Toast.makeText(this@admin_complain_view,userId.toString(),Toast.LENGTH_SHORT).show()
         adminArrayList = ArrayList()
         adminComplainViewAdapter = AdminComplainViewAdapter(adminArrayList)
         adminRecyclerview.adapter = adminComplainViewAdapter
         binding.adminComplaintViewViewComplainListUserWiseButton.setOnClickListener {
             val intent= Intent(this@admin_complain_view,admin_view_complaint_user_wise::class.java)
-            intent.putExtra("adminId",adminId)
+            intent.putExtra("userId",userId)
             startActivity(intent)
             finish()
         }
@@ -67,7 +67,10 @@ class admin_complain_view : AppCompatActivity() {
                                                             userData = userData ?: UserData()
                                                         )
                                                         userComplain?.let {
-                                                            adminArrayList.add(adminComplain)
+                                                            if(it.Complainsolved=="No"){
+                                                                adminArrayList.add(adminComplain)
+                                                            }
+
                                                         }
 
                                                         adminComplainViewAdapter.notifyDataSetChanged()
