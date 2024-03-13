@@ -46,27 +46,27 @@ class user_profile_view : AppCompatActivity() {
                 flatNo.text=userData?.flatNo.toString()
                 buildingName.text=userData?.buildingName.toString()
                 buildingNo.text=userData?.buildingNo.toString()
-//                totalComplains.setOnClickListener {
-//                    val intent= Intent(this@user_profile_view,User_View_Complain::class.java)
-//                    intent.putExtra("userId",userId)
-//                    intent.putExtra("Type","totalComplains")
-//                    startActivity(intent)
-//                    finish()
-//                }
-//                pendingComplains.setOnClickListener {
-//                    val intent=Intent(this@user_profile_view,User_View_Complain::class.java)
-//                    intent.putExtra("userId",userId)
-//                    intent.putExtra("Type","pendingComplains")
-//                    startActivity(intent)
-//                    finish()
-//                }
-//                resolvedComplains.setOnClickListener {
-//                    val intent=Intent(this@user_profile_view,User_View_Complain::class.java)
-//                    intent.putExtra("userId",userId)
-//                    intent.putExtra("Type","resolvedComplains")
-//                    startActivity(intent)
-//                    finish()
-//                }
+                totalComplains.setOnClickListener {
+                    val intent= Intent(this@user_profile_view,User_View_Complain::class.java)
+                    intent.putExtra("userId",userId)
+                    intent.putExtra("Type","totalComplains")
+                    startActivity(intent)
+                    finish()
+                }
+                pendingComplains.setOnClickListener {
+                    val intent=Intent(this@user_profile_view,User_View_Complain::class.java)
+                    intent.putExtra("userId",userId)
+                    intent.putExtra("Type","pendingComplains")
+                    startActivity(intent)
+                    finish()
+                }
+                resolvedComplains.setOnClickListener {
+                    val intent=Intent(this@user_profile_view,User_View_Complain::class.java)
+                    intent.putExtra("userId",userId)
+                    intent.putExtra("Type","resolvedComplains")
+                    startActivity(intent)
+                    finish()
+                }
             }
 
             override fun onCancelled(error: DatabaseError) {

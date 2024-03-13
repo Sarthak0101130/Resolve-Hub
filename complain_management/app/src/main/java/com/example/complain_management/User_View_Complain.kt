@@ -30,6 +30,7 @@ class User_View_Complain : AppCompatActivity(){
         userRecyclerview=binding.userComplainList
         database= FirebaseDatabase.getInstance()
         val userId=intent.getStringExtra("userId")
+        val type=intent.getStringExtra("Type")
         val complainRef=database.getReference("ComplainUser").child(userId!!)
         userRecyclerview.setHasFixedSize(true);
         userRecyclerview.layoutManager=LinearLayoutManager(this);
@@ -45,7 +46,24 @@ class User_View_Complain : AppCompatActivity(){
                     val userComplain=compainSnapshot.getValue(UserComplain::class.java)
 
                     userComplain?.let{
-                        userArrayList.add(it)
+                        if(type=="totalComplains"){
+                            userArrayList.add(it)
+                        }else if(type=="pendingComplains"){
+                            if(it.Complainsolved=="No"){
+                                userArrayList.add(it)
+                            }else{
+
+                            }
+                        }else if(type=="resolvedComplains"){
+                            if(it.Complainsolved=="Yes"){
+                                userArrayList.add(it)
+                            }else{
+
+                            }
+                        }else{
+                            Toast.makeText(this@User_View_Complain,"Wrong Type",Toast.LENGTH_SHORT).show()
+                        }
+
                     }
                 }
                 userComplainViewAdapter.notifyDataSetChanged()
