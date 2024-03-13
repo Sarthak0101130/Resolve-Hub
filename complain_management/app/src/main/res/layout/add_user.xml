@@ -19,21 +19,11 @@
     <include
         android:id="@+id/scrollable_content"
         layout="@layout/add_user_scrollable_view"
-        android:layout_width="370dp"
-        android:layout_height="656dp"
-        app:layout_constraintBottom_toBottomOf="0"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:layout_width="489dp"
-        android:layout_height="79dp"
-        android:background="@drawable/top_background"
+        android:layout_width="380dp"
+        android:layout_height="648dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toTopOf="@+id/top_constant_view" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
