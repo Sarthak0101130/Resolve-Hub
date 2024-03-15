@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageButton
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
@@ -45,7 +46,7 @@ class ExistingUserAdapter(private val userList:ArrayList<UserData>) :
     class MyViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
         val name: TextView =itemView.findViewById(R.id.existing_user_list_item_name_text)
         val phoneNo: TextView =itemView.findViewById(R.id.existing_user_list_item_phone_no_text)
-        val userViewAllComplains: Button =itemView.findViewById(R.id.existing_user_list_item_view_user_button)
+        val userViewAllComplains: ImageButton =itemView.findViewById(R.id.existing_user_list_item_view_user_button)
         val flatNo:TextView=itemView.findViewById(R.id.existing_user_list_item_flat_no_text)
         val buildingNo:TextView=itemView.findViewById(R.id.existing_user_list_item_building_no_text)
         val buildingName:TextView=itemView.findViewById(R.id.existing_user_list_item_building_name_text)

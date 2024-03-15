@@ -32,39 +32,6 @@ class user_complaint_detailed_view : AppCompatActivity() {
     private lateinit var storage: FirebaseStorage
     private lateinit var storageRef: StorageReference
 
-    private fun checkAndRequestCameraPermission() {
-        val cameraPermission = Manifest.permission.CAMERA
-        val storagePermission = Manifest.permission.READ_EXTERNAL_STORAGE
-
-        if (!checkPermission(cameraPermission) || !checkPermission(storagePermission)) {
-            // Camera or storage permission not granted, request them
-            requestCameraAndStoragePermissions()
-        }
-    }
-
-    private fun checkPermission(permission: String): Boolean {
-        return ContextCompat.checkSelfPermission(this, permission) == PackageManager.PERMISSION_GRANTED
-    }
-
-    private fun requestCameraAndStoragePermissions() {
-        val permissions = arrayOf(Manifest.permission.CAMERA, Manifest.permission.READ_EXTERNAL_STORAGE)
-        requestMultiplePermissionsLauncher.launch(permissions)
-    }
-
-    private val requestMultiplePermissionsLauncher =
-        registerForActivityResult(ActivityResultContracts.RequestMultiplePermissions()) { permissions ->
-            // Check if both CAMERA and READ_EXTERNAL_STORAGE permissions are granted
-            if (permissions[Manifest.permission.CAMERA] == true &&
-                permissions[Manifest.permission.READ_EXTERNAL_STORAGE] == true
-            ) {
-                // Permissions granted, proceed with camera-related operations
-
-            } else {
-                // Handle the case when permissions are not granted
-                // You might want to show a message to the user or request the permissions again
-                Toast.makeText(this, "Camera and storage permissions are required.", Toast.LENGTH_SHORT).show()
-            }
-        }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -87,7 +54,6 @@ class user_complaint_detailed_view : AppCompatActivity() {
         val complaintSolvedTime=binding.userComplaintDetailedViewComplaintResolvedDateText
         image=binding.userComplaintDetailedViewImageSubmittedImageView
         val complaintSolvedSubmitButton=binding.userComplaintDetailedViewComplaintResolvedSuccessfullyButton
-        checkAndRequestCameraPermission()
         complaintUserRef.addValueEventListener(object:ValueEventListener{
             override fun onDataChange(snapshot: DataSnapshot) {
                 val complainData=snapshot.getValue(UserComplain::class.java)
@@ -141,7 +107,7 @@ class user_complaint_detailed_view : AppCompatActivity() {
                                 val newCompletedCount = currentCompletedCount + 1
 
                                 val updatesUser = HashMap<String, Any>()
-                                updatesUser["ComplainsPending"] = newPendingCount
+                                updatesUser["complainsPending"] = newPendingCount
                                 updatesUser["complainResolved"]=newCompletedCount
 
                                 userRef.updateChildren(updatesUser)

@@ -29,7 +29,7 @@ class existing_users : AppCompatActivity() {
         val userRef=database.getReference("UserData")
         userRecyclerview.setHasFixedSize(true);
         userRecyclerview.layoutManager= LinearLayoutManager(this);
-
+        Toast.makeText(this@existing_users,adminId.toString(),Toast.LENGTH_SHORT).show()
         userArrayList= ArrayList()
         existingUserAdapter= ExistingUserAdapter(userArrayList)
         userRecyclerview.adapter=existingUserAdapter
