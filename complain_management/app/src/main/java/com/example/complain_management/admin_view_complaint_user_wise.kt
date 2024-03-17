@@ -54,7 +54,7 @@ class admin_view_complaint_user_wise : AppCompatActivity() {
                                         userData?.let{
                                             if(it.ComplainsPending?:0>0){
                                                 adminUserWiseArrayList.add(it)
-                                                adminUserWiseArrayList.sortByDescending { user -> user.ComplainsPending ?: 0 }
+                                                adminUserWiseArrayList.sortByDescending { it -> it.ComplainsPending ?: 0 }
                                                 adminViewComplainUserWiseAdapter.notifyDataSetChanged()
                                             }
 

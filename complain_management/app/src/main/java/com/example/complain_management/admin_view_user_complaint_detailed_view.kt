@@ -119,7 +119,7 @@ class admin_view_user_complaint_detailed_view : AppCompatActivity() {
                                 val newCompletedCount = currentCompletedCount + 1
 
                                 val updatesUser = HashMap<String, Any>()
-                                updatesUser["ComplainsPending"] = newPendingCount
+                                updatesUser["complainsPending"] = newPendingCount
                                 updatesUser["complainResolved"]=newCompletedCount
 
                                 userRef.updateChildren(updatesUser)
