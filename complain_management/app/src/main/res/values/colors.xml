@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="yellow">#FFC801</color>
+    <color name="black">#FFF00000</color>
     <color name="black">#FF000000</color>
     <color name="green">#00FF00</color>
     <color name="red">#FF0000</color>
@@ -30,4 +31,7 @@
     <color name="final_peach">#f8eeec</color>
     <color name="final_orange">#EA6d35</color>
     <color name="final_blue">#3c648c</color>
+
+
+
 </resources>
