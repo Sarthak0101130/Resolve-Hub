@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="yellow">#FFC801</color>
-    <color name="black">#FFF00000</color>
-    <color name="black">#FF000000</color>
+    <color name="black">#FF00000</color>
     <color name="green">#00FF00</color>
     <color name="red">#FF0000</color>
     <color name="_bg__home_page_ek2_color">#FFFFFF</color>
